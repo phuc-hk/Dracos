@@ -1,0 +1,159 @@
+using Assets.HeroEditor.Common.CharacterScripts;
+using Assets.HeroEditor.Common.CharacterScripts.Firearms;
+using Assets.HeroEditor.Common.CharacterScripts.Firearms.Enums;
+using Assets.HeroEditor.Common.ExampleScripts;
+using HeroEditor.Common.Enums;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class Attacking : MonoBehaviour
+{
+    public Character Character;
+    public BowExample BowExample;
+    public Firearm Firearm;
+    public Transform ArmL;
+    public Transform ArmR;
+    //public KeyCode FireButton;
+    //public KeyCode ReloadButton;
+    [Header("Check to disable arm auto rotation.")]
+    public bool FixedArm;
+
+    //private void Awake()
+    //{
+    //    playerInput = GetComponent<PlayerInput>();
+    //}
+
+    //private void Start()
+    //{
+    //    playerInput.actions["Fire"].performed += OnAttack;
+    //}
+
+    public void OnAttack(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            Attack();
+        }
+    }
+
+    public void Attack()
+    {
+        if ((Character.WeaponType == WeaponType.Firearms1H || Character.WeaponType == WeaponType.Firearms2H) && Firearm.Params.Type == FirearmType.Unknown)
+        {
+            throw new Exception("Firearm params not set.");
+        }
+
+        if (Character.Animator.GetInteger("State") >= (int)CharacterState.DeathB) return;
+
+        switch (Character.WeaponType)
+        {
+            case WeaponType.Melee1H:
+            case WeaponType.Melee2H:
+            case WeaponType.MeleePaired:
+                Character.Slash();
+                break;
+            case WeaponType.Bow:
+                BowExample.ChargeButtonDown = true;
+                break;
+            case WeaponType.Firearms1H:
+            case WeaponType.Firearms2H:
+                Firearm.Fire.FireButtonDown = true;
+                Firearm.Fire.FireButtonPressed = true;
+                break;
+            case WeaponType.Supplies:
+                Character.Animator.Play(Time.frameCount % 2 == 0 ? "UseSupply" : "ThrowSupply", 0); // Play animation randomly.
+                break;
+        }
+
+        Character.GetReady();
+    }
+
+    /// <summary>
+    /// Called each frame update, weapon to mouse rotation example.
+    /// </summary>
+    public void LateUpdate()
+    {
+        switch (Character.GetState())
+        {
+            case CharacterState.DeathB:
+            case CharacterState.DeathF:
+                return;
+        }
+
+        Transform arm;
+        Transform weapon;
+
+        switch (Character.WeaponType)
+        {
+            case WeaponType.Bow:
+                arm = ArmL;
+                weapon = Character.BowRenderers[3].transform;
+                break;
+            case WeaponType.Firearms1H:
+            case WeaponType.Firearms2H:
+                arm = ArmR;
+                weapon = Firearm.FireTransform;
+                break;
+            default:
+                return;
+        }
+
+        if (Character.IsReady())
+        {
+            RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition), -40, 40);
+        }
+    }
+
+    public float AngleToTarget;
+    public float AngleToArm;
+
+    /// <summary>
+    /// Selected arm to position (world space) rotation, with limits.
+    /// </summary>
+    public void RotateArm(Transform arm, Transform weapon, Vector2 target, float angleMin, float angleMax) // TODO: Very hard to understand logic.
+    {
+        target = arm.transform.InverseTransformPoint(target);
+
+        var angleToTarget = Vector2.SignedAngle(Vector2.right, target);
+        var angleToArm = Vector2.SignedAngle(weapon.right, arm.transform.right) * Math.Sign(weapon.lossyScale.x);
+        var fix = weapon.InverseTransformPoint(arm.transform.position).y / target.magnitude;
+
+        AngleToTarget = angleToTarget;
+        AngleToArm = angleToArm;
+
+        if (fix < -1) fix = -1;
+        else if (fix > 1) fix = 1;
+
+        var angleFix = Mathf.Asin(fix) * Mathf.Rad2Deg;
+        var angle = angleToTarget + angleFix + arm.transform.localEulerAngles.z;
+
+        angle = NormalizeAngle(angle);
+
+        if (angle > angleMax)
+        {
+            angle = angleMax;
+        }
+        else if (angle < angleMin)
+        {
+            angle = angleMin;
+        }
+
+        if (float.IsNaN(angle))
+        {
+            Debug.LogWarning(angle);
+        }
+
+        arm.transform.localEulerAngles = new Vector3(0, 0, angle + angleToArm);
+    }
+
+    private static float NormalizeAngle(float angle)
+    {
+        while (angle > 180) angle -= 360;
+        while (angle < -180) angle += 360;
+
+        return angle;
+    }
+}
