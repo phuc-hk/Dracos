@@ -9,16 +9,15 @@ public class Movement : MonoBehaviour
 {
     public Character Character;
     public CharacterController Controller;
-
-    private Vector2 _direction;
-    private Vector3 _speed;
-
     public float groundDistance = 0.2f;
     public LayerMask groundMask;
 
+    private Vector2 _direction;
+    private Vector3 _speed;
     private int _jumpCount = 0;
+    //private bool _isCrouching;
 
-    public void Start()
+    private void Start()
     {
         Character.Animator.SetBool("Ready", true);
     }
@@ -34,7 +33,6 @@ public class Movement : MonoBehaviour
         {
             if (_jumpCount < 1)
             {
-                //_direction.y = 1;
                 _speed.y = 10;
                 _jumpCount++;
             }
@@ -43,9 +41,24 @@ public class Movement : MonoBehaviour
         {
             _direction.y = 0;
         }
-
     }
 
+    //public void OnCrouch(InputAction.CallbackContext value)
+    //{
+    //    if (value.started)
+    //    {
+    //        _isCrouching = true;
+    //        //Crouch();
+    //        //Character.SetState(CharacterState.Crouch);
+    //        Debug.Log("crouchhhh");
+    //    }
+    //    else if (value.canceled)
+    //    {
+    //        _isCrouching = false;
+    //        //Crouch();
+    //        //.SetState(CharacterState.Idle);
+    //    }
+    //}
     public void OnDeath(InputValue value)
     {
         if (value.isPressed)
@@ -69,8 +82,7 @@ public class Movement : MonoBehaviour
             { 
                 Turn(direction.x);
             }
-        }  
-         
+        }      
 
         if (IsGrounded())
         {
@@ -78,11 +90,14 @@ public class Movement : MonoBehaviour
             {
                 Character.SetState(CharacterState.Run);
             }
+            //else if (_isCrouching)
+            //{
+            //    Character.SetState(CharacterState.Crouch);
+            //}
             else if (Character.GetState() < CharacterState.DeathB)
             {
                 Character.SetState(CharacterState.Idle);
             }
-            // Reset jump count when grounded
             _jumpCount = 0;
         }
         else

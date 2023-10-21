@@ -39,6 +39,19 @@ public class Attacking : MonoBehaviour
         }
     }
 
+    public void OnCrouch(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            Crouch();
+        }
+    }
+
+    private void Crouch()
+    {
+        Character.Crouch();
+    }
+
     public void Attack()
     {
         if ((Character.WeaponType == WeaponType.Firearms1H || Character.WeaponType == WeaponType.Firearms2H) && Firearm.Params.Type == FirearmType.Unknown)
