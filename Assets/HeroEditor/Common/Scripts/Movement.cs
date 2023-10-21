@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     public float groundDistance = 0.2f;
     public LayerMask groundMask;
 
+    private int _jumpCount = 0;
+
     public void Start()
     {
         Character.Animator.SetBool("Ready", true);
@@ -23,7 +25,25 @@ public class Movement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext value)
     {
-        _direction = value.ReadValue<Vector2>();
+        _direction.x = value.ReadValue<Vector2>().x;
+    }
+
+    public void OnJump(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            if (_jumpCount < 1)
+            {
+                //_direction.y = 1;
+                _speed.y = 10;
+                _jumpCount++;
+            }
+        }
+        if (value.canceled)
+        {
+            _direction.y = 0;
+        }
+
     }
 
     public void OnDeath(InputValue value)
@@ -43,7 +63,7 @@ public class Movement : MonoBehaviour
     {
         if (IsGrounded())
         {
-            _speed = new Vector3(5 * direction.x, 10 * direction.y);
+            _speed = new Vector3(5 * direction.x, _speed.y);
             
             if (direction.x != 0) 
             { 
@@ -62,13 +82,15 @@ public class Movement : MonoBehaviour
             {
                 Character.SetState(CharacterState.Idle);
             }
+            // Reset jump count when grounded
+            _jumpCount = 0;
         }
         else
         {
             Character.SetState(CharacterState.Jump);
         }
 
-        _speed.y -= 25 * Time.deltaTime; // Depends on project physics settings
+        _speed.y -= 25 * Time.deltaTime;
         Controller.Move(_speed * Time.deltaTime);
     }
 

@@ -813,7 +813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &801936605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1150,6 +1150,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 80847ce7-051e-4056-942f-b0feaa8e554f
     m_ActionName: gameplay/hit
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 941272745}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bd1b9807-d377-40f1-a72f-f223e1f15099
+    m_ActionName: gameplay/jump
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: gameplay
@@ -1387,7 +1403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: <Gamepad>/rightStick/up
+  m_ControlPath: <Gamepad>/rightStick/right
 --- !u!114 &989908649
 MonoBehaviour:
   m_ObjectHideFlags: 0
