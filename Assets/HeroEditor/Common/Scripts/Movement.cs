@@ -1,4 +1,5 @@
 using Assets.HeroEditor.Common.CharacterScripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,11 +12,16 @@ public class Movement : MonoBehaviour
     public CharacterController Controller;
     public float groundDistance = 0.2f;
     public LayerMask groundMask;
-
     private Vector2 _direction;
     private Vector3 _speed;
     private int _jumpCount = 0;
-    //private bool _isCrouching;
+
+    [Header("Dash parameter")]  
+    public float dashForce = 10f;
+    public float dashCoolDown = 2f;
+    //public float dashTime = 1f;
+    private bool _canDash = false;
+    private bool _isDashing = false;
 
     private void Start()
     {
@@ -43,22 +49,18 @@ public class Movement : MonoBehaviour
         }
     }
 
-    //public void OnCrouch(InputAction.CallbackContext value)
-    //{
-    //    if (value.started)
-    //    {
-    //        _isCrouching = true;
-    //        //Crouch();
-    //        //Character.SetState(CharacterState.Crouch);
-    //        Debug.Log("crouchhhh");
-    //    }
-    //    else if (value.canceled)
-    //    {
-    //        _isCrouching = false;
-    //        //Crouch();
-    //        //.SetState(CharacterState.Idle);
-    //    }
-    //}
+    public void OnDash(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            _canDash = true;
+        }
+        if (value.canceled)
+        {
+            _canDash = false;
+        }
+    }
+
     public void OnDeath(InputValue value)
     {
         if (value.isPressed)
@@ -70,9 +72,21 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         Move(_direction);
+        if (_canDash && !_isDashing) StartCoroutine(Dash());
     }
 
-    public void Move(Vector2 direction)
+    private IEnumerator Dash()
+    {
+        _isDashing = true;
+        Vector3 direction = Controller.transform.right;
+        direction.x *= _direction.x;
+        Controller.Move(direction * dashForce * Time.deltaTime);
+        yield return new WaitForSeconds(dashCoolDown);
+        _isDashing = false;
+        //yield return new WaitForSeconds(dashCoolDown);
+    }
+
+    private void Move(Vector2 direction)
     {
         if (IsGrounded())
         {
@@ -90,10 +104,6 @@ public class Movement : MonoBehaviour
             {
                 Character.SetState(CharacterState.Run);
             }
-            //else if (_isCrouching)
-            //{
-            //    Character.SetState(CharacterState.Crouch);
-            //}
             else if (Character.GetState() < CharacterState.DeathB)
             {
                 Character.SetState(CharacterState.Idle);
@@ -109,12 +119,12 @@ public class Movement : MonoBehaviour
         Controller.Move(_speed * Time.deltaTime);
     }
 
-    public void Turn(float direction)
+    private void Turn(float direction)
     {
         Character.transform.localScale = new Vector3(Mathf.Sign(direction), 1, 1);
     }
 
-    bool IsGrounded()
+    private bool IsGrounded()
     {
         return Physics.CheckSphere(Controller.transform.position, groundDistance, groundMask);
     }
