@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
     //public float dashTime = 1f;
     private bool _canDash = false;
     private bool _isDashing = false;
+    [SerializeField] GameObject dashEffect;
 
     private void Start()
     {
@@ -79,11 +80,12 @@ public class Movement : MonoBehaviour
     {
         _isDashing = true;
         Vector3 direction = Controller.transform.right;
-        direction.x *= _direction.x;
+        direction.x *= Character.transform.localScale.x;
+        Character.Jab();
+        dashEffect.gameObject.SetActive(true);
         Controller.Move(direction * dashForce * Time.deltaTime);
         yield return new WaitForSeconds(dashCoolDown);
         _isDashing = false;
-        //yield return new WaitForSeconds(dashCoolDown);
     }
 
     private void Move(Vector2 direction)
