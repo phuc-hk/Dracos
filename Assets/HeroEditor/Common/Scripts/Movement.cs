@@ -73,7 +73,7 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         Move(_direction);
-        if (_canDash && !_isDashing) StartCoroutine(Dash());
+        if (_canDash && !_isDashing) StartCoroutine(Dash());       
     }
 
     private IEnumerator Dash()
@@ -114,7 +114,8 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            Character.SetState(CharacterState.Jump);
+            Character.SetState(CharacterState.Jump);           
+            if (direction.x != 0) Turn(direction.x); // Allow turning while jumping
         }
 
         _speed.y -= 25 * Time.deltaTime;
