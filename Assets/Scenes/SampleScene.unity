@@ -2434,6 +2434,10 @@ PrefabInstance:
       value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4637939310262201801, guid: 66d06955add7a4a43b42d57062b569ea, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637939310262201801, guid: 66d06955add7a4a43b42d57062b569ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.26
       objectReference: {fileID: 0}
@@ -2525,6 +2529,7 @@ MonoBehaviour:
   player: {fileID: 941272771}
   moveSpeed: 2
   patrolRange: 5
+  chaseRange: 5
 --- !u!1 &1083958616
 GameObject:
   m_ObjectHideFlags: 0
