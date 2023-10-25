@@ -5,12 +5,11 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public Transform player;
+    //public Transform player;
     public float moveSpeed = 2f;
     public float patrolRange = 5f;
-    public float chaseRange = 3f;
+    public float detectRange = 5f;
 
-    private Monster monster;
     private Rigidbody2D rb;
     private Vector3 startPos;
     private Vector3 endPos;
@@ -19,14 +18,12 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 faceRight;
 
     private void Awake()
-    {
-        monster = GetComponent<Monster>();        
+    {       
         rb = GetComponent<Rigidbody2D>();       
     }
 
     private void Start()
     {
-        monster.SetState(MonsterState.Walk);
         startPos = transform.position;
         endPos = new Vector3(startPos.x + patrolRange, startPos.y, startPos.z);
         faceRight = transform.localScale;
@@ -34,57 +31,34 @@ public class EnemyMovement : MonoBehaviour
         faceLeft.x *= -1;
     }
 
-    private void Update()
-    {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        if (distanceToPlayer > chaseRange)
-        {
-            Patrol();
-        }
-        else
-        {
-            Chase();
-        }
-    }
-
-    private void Patrol()
+    public void Patrol()
     {
         if (movingRight)
         {
+            transform.localScale = faceRight;
             rb.velocity = transform.right * moveSpeed;
             if (transform.position.x >= endPos.x)
             {
                 movingRight = false;
-                Flip();
+                transform.localScale = faceLeft;
             }
         }
         else
         {
+            transform.localScale = faceLeft;
             rb.velocity = -transform.right * moveSpeed;
             if (transform.position.x <= startPos.x)
             {
                 movingRight = true;
-                Flip();
+                transform.localScale = faceRight;
             }
         }
     }
 
-    private void Chase()
+    public void Chase(Transform player)
     {
         Vector3 direction = (player.position - transform.position).normalized;
         rb.velocity = direction * moveSpeed;
-
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (distanceToPlayer <= 2)
-        {
-            //EnemyAttack enemyAttack = GetComponent<EnemyAttack>();
-            //if (enemyAttack != null)
-            //{
-            //    enemyAttack.Attack();
-            //}
-            rb.velocity = Vector3.zero;
-        }
 
         if (direction.x > 0)
         {
@@ -96,10 +70,8 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void Flip()
+    public void Stop()
     {
-        Vector2 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        rb.velocity = Vector3.zero;
     }
 }
