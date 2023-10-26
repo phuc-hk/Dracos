@@ -1,3 +1,4 @@
+using Assets.FantasyMonsters.Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,8 +30,8 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        GetComponent<Animator>().SetTrigger("death");
-        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<Animator>().SetInteger("State", (int) MonsterState.Death); ;
+        GetComponent<Collider2D>().enabled = false;
     }
 
     public bool IsDie()

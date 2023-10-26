@@ -8,6 +8,6 @@ public class EnemyAttacking : MonoBehaviour
 
     public void Attack()
     {
-        Debug.Log("Attackkkk");
+        //Debug.Log("Attackkkk");
     }
 }

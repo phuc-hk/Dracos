@@ -22,6 +22,7 @@ namespace Assets.FantasyMonsters.Scripts
         public Transform player;
         private EnemyMovement enemyMovement;
         private EnemyAttacking enemyAttacking;
+        private Health enemyHealth;
         float distanceToPlayer;
 
 
@@ -53,6 +54,7 @@ namespace Assets.FantasyMonsters.Scripts
             //New add
             enemyMovement = GetComponent<EnemyMovement>();
             enemyAttacking = GetComponent<EnemyAttacking>();
+            enemyHealth = GetComponent<Health>();
         }
 
         private void Start()
@@ -61,6 +63,8 @@ namespace Assets.FantasyMonsters.Scripts
         }
         private void Update()
         {
+            if (enemyHealth.IsDie()) return;
+
             distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
             if (distanceToPlayer > enemyMovement.detectRange)

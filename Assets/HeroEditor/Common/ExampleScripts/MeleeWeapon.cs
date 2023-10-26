@@ -12,6 +12,7 @@ namespace Assets.HeroEditor.Common.ExampleScripts
     {
         public AnimationEvents AnimationEvents;
         public Transform Edge;
+        private int damage = 1;
 
         /// <summary>
         /// Listen animation events to determine hit moments.
@@ -32,6 +33,13 @@ namespace Assets.HeroEditor.Common.ExampleScripts
             {
                 case "Hit":
                     // Place hit behaviour here. For example, you could check/raycast collisons here.
+                    Collider2D[] hitColliders = Physics2D.OverlapBoxAll(Edge.position, Edge.localScale, 0);
+                    foreach (Collider2D hitCollider in hitColliders)
+                    {
+                        CombatTarget combatTarget = hitCollider.GetComponent<CombatTarget>();
+                        if (combatTarget == null) continue;
+                        combatTarget.GetComponent<Health>().TakeDamage(damage);
+                    }
                     break;
                 default: return;
             }
