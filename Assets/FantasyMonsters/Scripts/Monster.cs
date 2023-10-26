@@ -17,6 +17,14 @@ namespace Assets.FantasyMonsters.Scripts
         public bool Variations;
         public event Action<string> OnEvent = eventName => { };
 
+        //New add
+        public GameObject detectRange;
+        public Transform player;
+        private EnemyMovement enemyMovement;
+        private EnemyAttacking enemyAttacking;
+        float distanceToPlayer;
+
+
         /// <summary>
         /// Called on Awake.
         /// </summary>
@@ -40,6 +48,38 @@ namespace Assets.FantasyMonsters.Scripts
             if (stateHandler)
             {
                 stateHandler.StateExit.AddListener(() => SetHead(0));
+            }
+
+            //New add
+            enemyMovement = GetComponent<EnemyMovement>();
+            enemyAttacking = GetComponent<EnemyAttacking>();
+        }
+
+        private void Start()
+        {
+            detectRange.SetActive(true);
+        }
+        private void Update()
+        {
+            distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+            if (distanceToPlayer > enemyMovement.detectRange)
+            {
+                detectRange.SetActive(true);
+                enemyMovement.Patrol();
+                SetState(MonsterState.Walk);
+            }
+            else if (distanceToPlayer > enemyAttacking.attackRange)
+            {
+                detectRange.SetActive(false);
+                enemyMovement.Chase(player);
+                SetState(MonsterState.Run);
+            }
+            else
+            {
+                enemyMovement.Stop();
+                enemyAttacking.Attack();              
+                Animator.SetTrigger("Attack");
             }
         }
 
