@@ -2202,6 +2202,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 178129336160664536, guid: 46483cbea8552be478581b349781c746, type: 3}
   m_PrefabInstance: {fileID: 900876735}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &941272775
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941272736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.295557, y: 2.6888983, z: 1}
+  m_Center: {x: 0.04222247, y: 1.2455624, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3968,7 +3981,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 801.44, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3986,7 +3999,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 963194227}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -6091,6 +6104,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -314.6, y: 44.6}
+  m_AnchoredPosition: {x: -314.6, y: 44.59999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.55, y: 0.5}

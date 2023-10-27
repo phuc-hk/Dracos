@@ -27,11 +27,9 @@ public class Health : MonoBehaviour
         }
     }
 
-
     private void Die()
     {
         GetComponent<Animator>().SetInteger("State", (int) MonsterState.Death); ;
-        GetComponent<Collider2D>().enabled = false;
     }
 
     public bool IsDie()
@@ -45,5 +43,4 @@ public class Health : MonoBehaviour
         return heath;
     }
 
-   
 }

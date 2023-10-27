@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Assets.FantasyMonsters.Scripts.Tweens;
+using Assets.HeroEditor.Common.CharacterScripts;
 using UnityEngine;
 
 namespace Assets.FantasyMonsters.Scripts
@@ -19,11 +20,10 @@ namespace Assets.FantasyMonsters.Scripts
 
         //New add
         public GameObject detectRange;
-        public Transform player;
+        private Character target;
         private EnemyMovement enemyMovement;
         private EnemyAttacking enemyAttacking;
         private Health enemyHealth;
-        float distanceToPlayer;
 
 
         /// <summary>
@@ -65,18 +65,18 @@ namespace Assets.FantasyMonsters.Scripts
         {
             if (enemyHealth.IsDie()) return;
 
-            distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            target = DetectCharactersInRange(enemyMovement.detectRange);
 
-            if (distanceToPlayer > enemyMovement.detectRange)
+            if (target == null)
             {
                 detectRange.SetActive(true);
                 enemyMovement.Patrol();
                 SetState(MonsterState.Walk);
             }
-            else if (distanceToPlayer > enemyAttacking.attackRange)
+            else if (Vector3.Distance(transform.position, target.transform.position) > enemyAttacking.attackRange)
             {
                 detectRange.SetActive(false);
-                enemyMovement.Chase(player);
+                enemyMovement.Chase(target.gameObject.transform);
                 SetState(MonsterState.Run);
             }
             else
@@ -85,6 +85,22 @@ namespace Assets.FantasyMonsters.Scripts
                 enemyAttacking.Attack();              
                 Animator.SetTrigger("Attack");
             }
+        }
+
+        public Character DetectCharactersInRange(float detectRadius)
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, detectRadius);
+
+            foreach (Collider collider in colliders)
+            {
+                Character character = collider.GetComponent<Character>();
+
+                if (character != null)
+                {
+                    return character;
+                }
+            }
+            return null;
         }
 
         /// <summary>
