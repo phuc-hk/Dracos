@@ -24,6 +24,7 @@ namespace Assets.FantasyMonsters.Scripts
         private EnemyMovement enemyMovement;
         private EnemyAttacking enemyAttacking;
         private Health enemyHealth;
+        private bool isFlyBack = false;
 
 
         /// <summary>
@@ -79,11 +80,16 @@ namespace Assets.FantasyMonsters.Scripts
                 enemyMovement.Chase(target.gameObject.transform);
                 SetState(MonsterState.Run);
             }
-            else
+            else if (Vector3.Distance(transform.position, target.transform.position) <= enemyAttacking.attackRange)
             {
                 enemyMovement.Stop();
                 enemyAttacking.Attack();              
                 Animator.SetTrigger("Attack");
+            }
+            if (isFlyBack)
+            {
+                enemyMovement.FlyBack();
+                isFlyBack = false;
             }
         }
 
@@ -152,6 +158,11 @@ namespace Assets.FantasyMonsters.Scripts
             {
                 Head.sprite = HeadSprites[index];
             }
+        }
+
+        public void IsFlyBack(bool value)
+        {
+            isFlyBack = value;
         }
     }
 }

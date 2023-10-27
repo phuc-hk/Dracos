@@ -74,11 +74,11 @@ public class EnemyMovement : MonoBehaviour
     {
         if (transform.localScale == faceLeft)
         {
-            rb.AddForce(transform.right * 200, ForceMode2D.Impulse);
+            rb.AddForce(transform.right * 8000, ForceMode2D.Impulse);
         }
         else
         {
-            rb.AddForce(- transform.right * 200, ForceMode2D.Impulse);
+            rb.AddForce(- transform.right * 8000, ForceMode2D.Impulse);
         }    
         
     }

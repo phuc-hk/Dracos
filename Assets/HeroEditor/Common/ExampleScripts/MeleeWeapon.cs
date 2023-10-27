@@ -16,6 +16,7 @@ namespace Assets.HeroEditor.Common.ExampleScripts
         public Transform Edge;
         private int damage = 1;
         private int hitCount = 0;
+        [SerializeField] GameObject slashEffect;
 
         /// <summary>
         /// Listen animation events to determine hit moments.
@@ -42,28 +43,16 @@ namespace Assets.HeroEditor.Common.ExampleScripts
                         CombatTarget combatTarget = hitCollider.GetComponent<CombatTarget>();
                         if (combatTarget == null) continue;
                         combatTarget.GetComponent<Health>().TakeDamage(damage);
-                        StartCoroutine(FlyBack(combatTarget));
+                        hitCount++;
+                        if (hitCount >= 2)
+                        {
+                            slashEffect.SetActive(true);
+                            combatTarget.GetComponent<Monster>().IsFlyBack(true);
+                            hitCount = 0;
+                        }
                     }
                     break;
                 default: return;
-            }
-        }
-
-        IEnumerator FlyBack(CombatTarget combatTarget)
-        {
-            hitCount++;
-            if (hitCount >= 2)
-            {
-                EnemyMovement movement = combatTarget.GetComponent<EnemyMovement>();
-                if (movement != null)
-                {
-                    Debug.Log("Fly back");
-                    combatTarget.GetComponent<Monster>().enabled = false;
-                    movement.FlyBack();
-                    yield return new WaitForSeconds(1);
-                    combatTarget.GetComponent<Monster>().enabled = true;
-                }
-                hitCount = 0;
             }
         }
     }
