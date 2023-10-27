@@ -7,21 +7,24 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    float heath = -1;
+    float health = -1;
+    bool isDie = false;
+    SpriteRenderer[] spriteRenderers;
 
     void Start()
     {
-        if (heath < 0)
+        if (health < 0)
         {
-            heath = 5;
+            health = 5;
         }
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
     }
-    
+
     public void TakeDamage(float damage)
     {
-        heath = Mathf.Max(heath - damage, 0);
-        Debug.Log("Health " + heath);
-        if (heath == 0)
+        health = Mathf.Max(health - damage, 0);
+        Debug.Log("Health " + health);
+        if (health == 0)
         {
             Die();
         }
@@ -29,18 +32,36 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        GetComponent<Animator>().SetInteger("State", (int) MonsterState.Death); ;
+        isDie = true;
+        GetComponent<Animator>().SetInteger("State", (int)MonsterState.Death);
+        StartCoroutine(FlashSprite());
+    }
+
+    IEnumerator FlashSprite()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+            {
+                spriteRenderer.enabled = false;
+            }
+            yield return new WaitForSeconds(0.3f);
+            foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+            {
+                spriteRenderer.enabled = true;
+            }
+            yield return new WaitForSeconds(0.3f);
+        }
+        Destroy(gameObject);
     }
 
     public bool IsDie()
     {
-        return heath == 0;
+        return isDie;
     }
-
 
     public float GetCurrentHealth()
     {
-        return heath;
+        return health;
     }
-
 }
