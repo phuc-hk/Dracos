@@ -2621,6 +2621,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 941272771}
     - target: {fileID: 8316402779051580188, guid: 66d06955add7a4a43b42d57062b569ea, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316402779051580188, guid: 66d06955add7a4a43b42d57062b569ea, type: 3}
       propertyPath: detectRange
       value: 
       objectReference: {fileID: 921402643}

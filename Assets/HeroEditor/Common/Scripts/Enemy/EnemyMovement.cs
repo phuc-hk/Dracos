@@ -70,6 +70,19 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    public void FlyBack()
+    {
+        if (transform.localScale == faceLeft)
+        {
+            rb.AddForce(transform.right * 200, ForceMode2D.Impulse);
+        }
+        else
+        {
+            rb.AddForce(- transform.right * 200, ForceMode2D.Impulse);
+        }    
+        
+    }
+
     public void Stop()
     {
         rb.velocity = Vector3.zero;
