@@ -25,6 +25,7 @@ namespace Assets.FantasyMonsters.Scripts
         private EnemyAttacking enemyAttacking;
         private Health enemyHealth;
         private bool isFlyBack = false;
+        
 
 
         /// <summary>

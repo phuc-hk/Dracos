@@ -2,6 +2,7 @@ using Assets.FantasyMonsters.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
     private bool movingRight = true;
     private Vector3 faceLeft;
     private Vector3 faceRight;
+ 
 
     private void Awake()
     {       
@@ -40,7 +42,8 @@ public class EnemyMovement : MonoBehaviour
             if (transform.position.x >= endPos.x)
             {
                 movingRight = false;
-                transform.localScale = faceLeft;
+                //transform.localScale = faceLeft;
+                Turn(faceLeft);
             }
         }
         else
@@ -51,6 +54,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 movingRight = true;
                 transform.localScale = faceRight;
+                Turn(faceRight);
             }
         }
     }
@@ -62,14 +66,17 @@ public class EnemyMovement : MonoBehaviour
 
         if (direction.x > 0)
         {
-            transform.localScale = faceRight;
+            //transform.localScale = faceRight;
+            Turn(faceRight);
         }
         else if (direction.x < 0)
         {
             transform.localScale = faceLeft;
+            Turn(faceLeft);
         }
     }
 
+    
     public void FlyBack()
     {
         if (transform.localScale == faceLeft)
@@ -86,5 +93,11 @@ public class EnemyMovement : MonoBehaviour
     public void Stop()
     {
         rb.velocity = Vector3.zero;
+    }
+
+    private void Turn(Vector3 facing)
+    {
+        transform.localScale = facing;
+        
     }
 }

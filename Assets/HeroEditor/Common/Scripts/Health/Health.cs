@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     float health = -1;
+    float initialHealth;
     bool isDie = false;
     SpriteRenderer[] spriteRenderers;
     public UnityEvent OnHealthChange;
@@ -23,6 +24,7 @@ public class Health : MonoBehaviour
         if (health < 0)
         {
             health = 5;
+            initialHealth = health;
         }
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
     }
@@ -30,7 +32,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health = Mathf.Max(health - damage, 0);
-        Debug.Log("Health " + health);
+        OnHealthChange?.Invoke();
         if (health == 0)
         {
             Die();
@@ -74,5 +76,10 @@ public class Health : MonoBehaviour
     public float GetCurrentHealth()
     {
         return health;
+    }
+
+    internal float GetHealthPercentage()
+    {
+        return health / initialHealth;
     }
 }
