@@ -10,6 +10,13 @@ public class Health : MonoBehaviour
     float health = -1;
     bool isDie = false;
     SpriteRenderer[] spriteRenderers;
+    public UnityEvent OnHealthChange;
+    public TakeDamageEvent OnTakeDamage;
+    [Serializable]
+    public class TakeDamageEvent : UnityEvent<float>
+    {
+
+    }
 
     void Start()
     {
@@ -27,6 +34,10 @@ public class Health : MonoBehaviour
         if (health == 0)
         {
             Die();
+        }
+        else
+        {
+            OnTakeDamage?.Invoke(damage);
         }
     }
 
