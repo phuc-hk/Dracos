@@ -18,18 +18,26 @@ public class HealthBar : MonoBehaviour
     private void Start()
     {
         health.OnHealthChange.AddListener(UpdateHealthBar);
-        rootCanvas.enabled = false;
-        
+        rootCanvas.enabled = false;       
     }
 
     private void UpdateHealthBar()
     {
-        rootCanvas.enabled = true;
-        if (health.IsDie())
-        {
-            rootCanvas.enabled = false;
-        }
+        rootCanvas.enabled = true;        
         float scaleValue = health.GetHealthPercentage();
         foreground.localScale = new Vector3(scaleValue, 1, 1);
+        if (health.IsDie())
+        {
+            StartCoroutine(TurnOffHealthBar());
+            
+        }
     }
+
+    IEnumerator TurnOffHealthBar()
+    {
+        yield return new WaitForSeconds(0.5f);
+        rootCanvas.enabled = false;
+    }
+
+    
 }

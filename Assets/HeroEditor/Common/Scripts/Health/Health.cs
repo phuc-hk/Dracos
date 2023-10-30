@@ -31,8 +31,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health = Mathf.Max(health - damage, 0);
-        OnHealthChange?.Invoke();
+        health = Mathf.Max(health - damage, 0);       
         if (health == 0)
         {
             Die();
@@ -41,6 +40,7 @@ public class Health : MonoBehaviour
         {
             OnTakeDamage?.Invoke(damage);
         }
+        OnHealthChange?.Invoke();
     }
 
     private void Die()
@@ -52,6 +52,7 @@ public class Health : MonoBehaviour
 
     IEnumerator FlashSprite()
     {
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < 3; i++)
         {
             foreach (SpriteRenderer spriteRenderer in spriteRenderers)
