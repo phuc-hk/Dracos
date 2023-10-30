@@ -19,6 +19,7 @@ namespace Assets.FantasyMonsters.Scripts
         public event Action<string> OnEvent = eventName => { };
 
         //New add
+        public Transform edge;
         public GameObject detectRange;
         private Character target;
         private EnemyMovement enemyMovement;
@@ -84,7 +85,7 @@ namespace Assets.FantasyMonsters.Scripts
             else if (Vector3.Distance(transform.position, target.transform.position) <= enemyAttacking.attackRange)
             {
                 enemyMovement.Stop();
-                enemyAttacking.Attack();              
+                //enemyAttacking.Attack();              
                 Animator.SetTrigger("Attack");
             }
             if (isFlyBack)
@@ -96,7 +97,7 @@ namespace Assets.FantasyMonsters.Scripts
 
         public Character DetectCharactersInRange(float detectRadius)
         {
-            Collider[] colliders = Physics.OverlapSphere(transform.position, detectRadius);
+            Collider[] colliders = Physics.OverlapSphere(edge.position, detectRadius);
 
             foreach (Collider collider in colliders)
             {

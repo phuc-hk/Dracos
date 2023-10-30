@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
     //public Transform player;
     public float moveSpeed = 2f;
     public float patrolRange = 5f;
-    public float detectRange = 20f;
+    public float detectRange = 1f;
 
     private Rigidbody2D rb;
     private Vector3 startPos;

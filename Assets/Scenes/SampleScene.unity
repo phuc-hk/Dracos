@@ -2291,19 +2291,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 178129336160664536, guid: 46483cbea8552be478581b349781c746, type: 3}
   m_PrefabInstance: {fileID: 900876735}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &941272775
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941272736}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.295557, y: 2.6888983, z: 1}
-  m_Center: {x: 0.04222247, y: 1.2455624, z: 0}
 --- !u!114 &941272779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2317,13 +2304,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: -1
-  initialHealth: 2
+  initialHealth: 20
   OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
+  character: {fileID: 941272743}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,6 +2714,10 @@ PrefabInstance:
       value: Boar
       objectReference: {fileID: 0}
     - target: {fileID: 8316402779051580188, guid: 66d06955add7a4a43b42d57062b569ea, type: 3}
+      propertyPath: edge
+      value: 
+      objectReference: {fileID: 1480192045}
+    - target: {fileID: 8316402779051580188, guid: 66d06955add7a4a43b42d57062b569ea, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 941272771}
@@ -2806,6 +2798,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 2
+  AnimationEvents: {fileID: 1082812027}
+  Edge: {fileID: 1480192045}
 --- !u!114 &1082812018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2850,6 +2844,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1082812027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082812002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db3728f3e374091b4966199eb8dd2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1083958616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,6 +3527,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971d1f11d602b7245ab051b7e880c74d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1480192044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1480192045}
+  m_Layer: 0
+  m_Name: Edge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1480192045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480192044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.04, y: 0.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1082812001}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1483001407
 GameObject:
   m_ObjectHideFlags: 0
