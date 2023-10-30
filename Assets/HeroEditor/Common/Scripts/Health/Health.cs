@@ -1,37 +1,37 @@
-using Assets.FantasyMonsters.Scripts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour
+public abstract class Health : MonoBehaviour
 {
-    float health = -1;
-    float initialHealth;
-    bool isDie = false;
-    SpriteRenderer[] spriteRenderers;
+    [SerializeField] float health = -1;
+    [SerializeField] float initialHealth;
+    protected bool isDie = false;
+    protected SpriteRenderer[] spriteRenderers;
     public UnityEvent OnHealthChange;
     public TakeDamageEvent OnTakeDamage;
+
     [Serializable]
     public class TakeDamageEvent : UnityEvent<float>
     {
 
     }
 
-    void Start()
+    protected virtual void Start()
     {
         if (health < 0)
         {
-            health = 5;
-            initialHealth = health;
+            health = initialHealth;
+            //initialHealth = health;
         }
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
-        health = Mathf.Max(health - damage, 0);       
+        health = Mathf.Max(health - damage, 0);
         if (health == 0)
         {
             Die();
@@ -41,16 +41,11 @@ public class Health : MonoBehaviour
             OnTakeDamage?.Invoke(damage);
         }
         OnHealthChange?.Invoke();
-    }
+    } 
 
-    private void Die()
-    {
-        isDie = true;
-        GetComponent<Animator>().SetInteger("State", (int)MonsterState.Death);
-        StartCoroutine(FlashSprite());
-    }
+    protected abstract void Die();
 
-    IEnumerator FlashSprite()
+    protected IEnumerator FlashSprite()
     {
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < 3; i++)
@@ -83,4 +78,12 @@ public class Health : MonoBehaviour
     {
         return health / initialHealth;
     }
+
+    //private void Update()
+    //{
+    //    if (health == 0)
+    //    {
+    //        Die();
+    //    }
+    //}
 }

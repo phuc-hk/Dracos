@@ -2304,6 +2304,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.295557, y: 2.6888983, z: 1}
   m_Center: {x: 0.04222247, y: 1.2455624, z: 0}
+--- !u!114 &941272779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941272736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce10b0cfc490948a9524690c3e5d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: -1
+  initialHealth: 2
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,7 +2818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340009eeec79d7c48bc463cec4ca5992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1082812019
+--- !u!114 &1082812026
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2807,9 +2827,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1082812002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9c734b6347ad964889f153fabe40756, type: 3}
+  m_Script: {fileID: 11500000, guid: cb871cfc91d8aab4bb8928d940ecc81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: -1
+  initialHealth: 5
   OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
