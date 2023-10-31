@@ -9,8 +9,6 @@ public class EnemyAttacking : MonoBehaviour
     public AnimationEvents AnimationEvents;
     public Transform Edge;
     private int damage = 1;
-    //private int hitCount = 0;
-    //[SerializeField] GameObject slashEffect;
 
     /// <summary>
     /// Listen animation events to determine hit moments.
@@ -34,7 +32,6 @@ public class EnemyAttacking : MonoBehaviour
                 Collider[] hitColliders = Physics.OverlapSphere(Edge.position, 1);
                 foreach (Collider hitCollider in hitColliders)
                 {
-                    //Debug.Log(hitCollider.GetInstanceID());
                     PlayerHealth health = hitCollider.GetComponent<PlayerHealth>();
                     if (health == null) continue;
                     health.TakeDamage(damage);

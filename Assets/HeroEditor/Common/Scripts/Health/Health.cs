@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public abstract class Health : MonoBehaviour
 {
-    [SerializeField] float health = -1;
     [SerializeField] float initialHealth;
+    [SerializeField] float health;
     protected bool isDie = false;
     protected SpriteRenderer[] spriteRenderers;
     public UnityEvent OnHealthChange;
@@ -20,12 +20,8 @@ public abstract class Health : MonoBehaviour
     }
 
     protected virtual void Start()
-    {
-        if (health < 0)
-        {
-            health = initialHealth;
-            //initialHealth = health;
-        }
+    { 
+        health = initialHealth;
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
     }
 
@@ -79,11 +75,4 @@ public abstract class Health : MonoBehaviour
         return health / initialHealth;
     }
 
-    //private void Update()
-    //{
-    //    if (health == 0)
-    //    {
-    //        Die();
-    //    }
-    //}
 }
