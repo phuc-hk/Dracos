@@ -31,6 +31,8 @@ public class Movement : MonoBehaviour
     public float wallDistance = 0.2f;
     private float slidingSpeed = 25f;
     private bool isWallSlide = false;
+    private float wallClimpSpeed = 4;
+    private float wallJumpForce = 10;
 
     private void Start()
     {
@@ -46,18 +48,27 @@ public class Movement : MonoBehaviour
     {
         if (value.started)
         {
-            if (_jumpCount < 1)
+            if (_jumpCount < 2)
             {
-                if (IsWall())
+                if (IsGrounded() && IsWall())       //Stand near wall
                 {
-                    _speed.y = 4;
+                    _speed.y = wallClimpSpeed;
                 }             
-                else
+                else if (isWallSlide)               //On wall slidding
+                {
+                    _speed.y = wallClimpSpeed;
+                    _jumpCount++;
+                }
+                else if (!IsGrounded() && !IsWall()) //In air
+                {
+                    _speed.y = wallClimpSpeed * 2;
+                    _speed.x = _direction.x * wallJumpForce;
+                }                         
+                else                                 //On ground
                 {
                     _speed.y = 10;
-                }    
-                
-                _jumpCount++;
+                    _jumpCount++;
+                }             
             }
         }
         if (value.canceled)
@@ -87,7 +98,7 @@ public class Movement : MonoBehaviour
     }
 
     private void Update()
-    { 
+    {
         WallSlide();
         Move(_direction);
         if (_canDash && !_isDashing) StartCoroutine(Dash());       
@@ -129,7 +140,7 @@ public class Movement : MonoBehaviour
             Character.SetState(CharacterState.Jump);           
             _speed.y -= fallSpeed * Time.deltaTime;
         }
-        if (direction.x != 0) Turn(direction.x); // Allow turning while jumping
+        if (direction.x != 0) Turn(direction.x); // Allow turning while in air
         Controller.Move(_speed * Time.deltaTime);
     }
 
