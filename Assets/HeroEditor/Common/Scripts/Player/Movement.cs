@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     public LayerMask groundMask;
     private Vector2 _direction;
     private Vector3 _speed;
+    private float fallSpeed = 25;
     private int _jumpCount = 0;
 
     [Header("Dash parameter")]  
@@ -23,6 +24,13 @@ public class Movement : MonoBehaviour
     private bool _canDash = false;
     private bool _isDashing = false;
     [SerializeField] GameObject dashEffect;
+
+    [Header("Wall slide parameter")]
+    [SerializeField] GameObject wallCheck;
+    public LayerMask wallMask;
+    public float wallDistance = 0.2f;
+    private float slidingSpeed = 25f;
+    private bool isWallSlide = false;
 
     private void Start()
     {
@@ -40,7 +48,15 @@ public class Movement : MonoBehaviour
         {
             if (_jumpCount < 1)
             {
-                _speed.y = 10;
+                if (IsWall())
+                {
+                    _speed.y = 4;
+                }             
+                else
+                {
+                    _speed.y = 10;
+                }    
+                
                 _jumpCount++;
             }
         }
@@ -71,7 +87,8 @@ public class Movement : MonoBehaviour
     }
 
     private void Update()
-    {
+    { 
+        WallSlide();
         Move(_direction);
         if (_canDash && !_isDashing) StartCoroutine(Dash());       
     }
@@ -93,11 +110,6 @@ public class Movement : MonoBehaviour
         if (IsGrounded())
         {
             _speed = new Vector3(5 * direction.x, _speed.y);
-            
-            if (direction.x != 0) 
-            { 
-                Turn(direction.x);
-            }
         }      
 
         if (IsGrounded())
@@ -112,13 +124,12 @@ public class Movement : MonoBehaviour
             }
             _jumpCount = 0;
         }
-        else
+        else if (!IsWall())
         {
             Character.SetState(CharacterState.Jump);           
-            if (direction.x != 0) Turn(direction.x); // Allow turning while jumping
+            _speed.y -= fallSpeed * Time.deltaTime;
         }
-
-        _speed.y -= 25 * Time.deltaTime;
+        if (direction.x != 0) Turn(direction.x); // Allow turning while jumping
         Controller.Move(_speed * Time.deltaTime);
     }
 
@@ -127,8 +138,27 @@ public class Movement : MonoBehaviour
         Character.transform.localScale = new Vector3(Mathf.Sign(direction), 1, 1);
     }
 
+    private void WallSlide()
+    {
+        if (IsWall() && !IsGrounded())
+        {
+            isWallSlide = true;
+            _speed.y -= slidingSpeed *  Time.deltaTime / 8;
+            Character.SetState(CharacterState.Climb);
+        }
+        else
+        {
+            isWallSlide = false;
+        }    
+    }
+
     private bool IsGrounded()
     {
         return Physics.CheckSphere(Controller.transform.position, groundDistance, groundMask);
+    }
+
+    private bool IsWall()
+    {
+        return Physics2D.OverlapCircle(wallCheck.transform.position, wallDistance, wallMask);
     }
 }
