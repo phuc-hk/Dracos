@@ -1,0 +1,66 @@
+using Assets.HeroEditor.Common.CharacterScripts;
+using HeroEditor.Common;
+using HeroEditor.Common.Enums;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WeaponPickup : MonoBehaviour
+{
+    [SerializeField] SpriteGroupEntry item;
+    [SerializeField] EquipmentPart part;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Pickup(other.GetComponent<Character>());
+            //Destroy(gameObject);
+            //StartCoroutine(HideForSeconds(5));
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+
+    private void Pickup(Character character)
+    {
+        //fighter.UnequipWeapon();
+        //fighter.EquipWeapon(weapon);
+        //character.Equip()
+        character.Equip(item, part);
+    }
+
+    //IEnumerator HideForSeconds(float hideTime)
+    //{
+    //    ShowPickup(false);
+    //    yield return new WaitForSeconds(hideTime);
+    //    ShowPickup(true);
+    //}
+
+    //private void ShowPickup(bool isShow)
+    //{
+    //    GetComponent<Collider>().enabled = isShow;
+    //    foreach (Transform child in transform)
+    //    {
+    //        child.gameObject.SetActive(isShow);
+    //    }
+    //}
+
+    //public bool HandleRaycast(PlayerController controller)
+    //{
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+    //        Pickup(controller.GetComponent<Fighter>());
+    //    }
+    //    return true;
+    //}
+
+    //public CursorType GetCursorType()
+    //{
+    //    return CursorType.Pickup;
+    //}
+}

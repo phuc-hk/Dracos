@@ -46,7 +46,8 @@ namespace Assets.HeroEditor.Common.ExampleScripts
                         hitCount++;
                         if (hitCount >= 2)
                         {
-                            slashEffect.SetActive(true);
+                            if (isWeapon())
+                                slashEffect.SetActive(true);
                             combatTarget.GetComponent<Monster>().IsFlyBack(true);
                             hitCount = 0;
                         }
@@ -54,6 +55,11 @@ namespace Assets.HeroEditor.Common.ExampleScripts
                     break;
                 default: return;
             }
+        }
+
+        private bool isWeapon()
+        {
+            return GetComponent<SpriteRenderer>().sprite != null;
         }
     }
 }

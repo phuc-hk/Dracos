@@ -6662,8 +6662,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ArcArmor
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ArcArmor.png
-    Sprite: {fileID: -4550084578846169200, guid: dc6bb6438f7a447418ad29b28e3954bb,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: dc6bb6438f7a447418ad29b28e3954bb, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: dc6bb6438f7a447418ad29b28e3954bb, type: 3}
     - {fileID: 624974917677838921, guid: dc6bb6438f7a447418ad29b28e3954bb, type: 3}
@@ -6686,8 +6685,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ArcArmorTypeB
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ArcArmorTypeB.png
-    Sprite: {fileID: -4550084578846169200, guid: 4193436b4f4e0b14f982b10dcec9fe78,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 4193436b4f4e0b14f982b10dcec9fe78, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 4193436b4f4e0b14f982b10dcec9fe78, type: 3}
     - {fileID: 624974917677838921, guid: 4193436b4f4e0b14f982b10dcec9fe78, type: 3}
@@ -6735,8 +6733,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ArmorOfAjero
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ArmorOfAjero.png
-    Sprite: {fileID: -4550084578846169200, guid: c4154f7c316073844a6e921e5e5cb89a,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: c4154f7c316073844a6e921e5e5cb89a, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: c4154f7c316073844a6e921e5e5cb89a, type: 3}
     - {fileID: 624974917677838921, guid: c4154f7c316073844a6e921e5e5cb89a, type: 3}
@@ -6759,8 +6756,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ArmorOfBrynhildr
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ArmorOfBrynhildr.png
-    Sprite: {fileID: -4550084578846169200, guid: 374ba0f7c760ae64a87935257079efee,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 374ba0f7c760ae64a87935257079efee, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 374ba0f7c760ae64a87935257079efee, type: 3}
     - {fileID: 624974917677838921, guid: 374ba0f7c760ae64a87935257079efee, type: 3}
@@ -6783,8 +6779,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ArmorOfCompassion
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ArmorOfCompassion.png
-    Sprite: {fileID: -4550084578846169200, guid: db1cb0c394e7807479fd8b04982689a8,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: db1cb0c394e7807479fd8b04982689a8, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: db1cb0c394e7807479fd8b04982689a8, type: 3}
     - {fileID: 624974917677838921, guid: db1cb0c394e7807479fd8b04982689a8, type: 3}
@@ -6830,8 +6825,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ArmorOfDecay
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ArmorOfDecay.png
-    Sprite: {fileID: -4550084578846169200, guid: 3b70d20c8d060e54badcb14d9cf083e7,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 3b70d20c8d060e54badcb14d9cf083e7, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 3b70d20c8d060e54badcb14d9cf083e7, type: 3}
     - {fileID: 624974917677838921, guid: 3b70d20c8d060e54badcb14d9cf083e7, type: 3}
@@ -7015,8 +7009,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ArmorOfTheMadGod
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ArmorOfTheMadGod.png
-    Sprite: {fileID: -4550084578846169200, guid: 94db190bd4e35b44d99652a6f47ce058,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 94db190bd4e35b44d99652a6f47ce058, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 94db190bd4e35b44d99652a6f47ce058, type: 3}
     - {fileID: 624974917677838921, guid: 94db190bd4e35b44d99652a6f47ce058, type: 3}
@@ -7039,8 +7032,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ArmorOfTheMadGodTypeB
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ArmorOfTheMadGodTypeB.png
-    Sprite: {fileID: -4550084578846169200, guid: e7c2b0dad48d72b4cbc48ca500663c77,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: e7c2b0dad48d72b4cbc48ca500663c77, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: e7c2b0dad48d72b4cbc48ca500663c77, type: 3}
     - {fileID: 624974917677838921, guid: e7c2b0dad48d72b4cbc48ca500663c77, type: 3}
@@ -7393,8 +7385,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ChocolatierDress
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ChocolatierDress.png
-    Sprite: {fileID: -4550084578846169200, guid: 96df9fe4183b0ac4cb00c1cd2dbb67df,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 96df9fe4183b0ac4cb00c1cd2dbb67df, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 96df9fe4183b0ac4cb00c1cd2dbb67df, type: 3}
     - {fileID: 624974917677838921, guid: 96df9fe4183b0ac4cb00c1cd2dbb67df, type: 3}
@@ -7417,8 +7408,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ChocolatierDress2
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ChocolatierDress2.png
-    Sprite: {fileID: -4550084578846169200, guid: 0a4ff20df82f8474cbd8027f81b611a4,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 0a4ff20df82f8474cbd8027f81b611a4, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 0a4ff20df82f8474cbd8027f81b611a4, type: 3}
     - {fileID: 624974917677838921, guid: 0a4ff20df82f8474cbd8027f81b611a4, type: 3}
@@ -7441,8 +7431,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ChocolatierDress3
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ChocolatierDress3.png
-    Sprite: {fileID: -4550084578846169200, guid: 5181a52a037a3384b89c19e0317f0856,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 5181a52a037a3384b89c19e0317f0856, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 5181a52a037a3384b89c19e0317f0856, type: 3}
     - {fileID: 624974917677838921, guid: 5181a52a037a3384b89c19e0317f0856, type: 3}
@@ -7560,8 +7549,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.DarkLordArmor
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/DarkLordArmor.png
-    Sprite: {fileID: -4550084578846169200, guid: dbc0be069e3adfe4ab391d9a49051cb3,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: dbc0be069e3adfe4ab391d9a49051cb3, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: dbc0be069e3adfe4ab391d9a49051cb3, type: 3}
     - {fileID: 624974917677838921, guid: dbc0be069e3adfe4ab391d9a49051cb3, type: 3}
@@ -7678,8 +7666,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.DragonTempestSteelGarb
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/DragonTempestSteelGarb.png
-    Sprite: {fileID: -4550084578846169200, guid: e190188bdc8b9cf48b91c186f3bdb1b5,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: e190188bdc8b9cf48b91c186f3bdb1b5, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: e190188bdc8b9cf48b91c186f3bdb1b5, type: 3}
     - {fileID: 624974917677838921, guid: e190188bdc8b9cf48b91c186f3bdb1b5, type: 3}
@@ -7794,8 +7781,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ElementalArcherArmor
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ElementalArcherArmor.png
-    Sprite: {fileID: -4550084578846169200, guid: fe8ce52490c078542bea48bf2eaf5b38,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: fe8ce52490c078542bea48bf2eaf5b38, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: fe8ce52490c078542bea48bf2eaf5b38, type: 3}
     - {fileID: 624974917677838921, guid: fe8ce52490c078542bea48bf2eaf5b38, type: 3}
@@ -7818,8 +7804,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ElementalArmor
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ElementalArmor.png
-    Sprite: {fileID: -4550084578846169200, guid: 4d5866e6b446f46469ec447f0b62dacd,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 4d5866e6b446f46469ec447f0b62dacd, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 4d5866e6b446f46469ec447f0b62dacd, type: 3}
     - {fileID: 624974917677838921, guid: 4d5866e6b446f46469ec447f0b62dacd, type: 3}
@@ -7842,8 +7827,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ElementalMageArmor
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ElementalMageArmor.png
-    Sprite: {fileID: -4550084578846169200, guid: 0fe9127d815e584439be455b7c82b323,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 0fe9127d815e584439be455b7c82b323, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 0fe9127d815e584439be455b7c82b323, type: 3}
     - {fileID: 624974917677838921, guid: 0fe9127d815e584439be455b7c82b323, type: 3}
@@ -7960,8 +7944,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.ExorcismRobes
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/ExorcismRobes.png
-    Sprite: {fileID: -4550084578846169200, guid: 630e03e0c24939446aa6a218bb7bc619,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 630e03e0c24939446aa6a218bb7bc619, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 630e03e0c24939446aa6a218bb7bc619, type: 3}
     - {fileID: 624974917677838921, guid: 630e03e0c24939446aa6a218bb7bc619, type: 3}
@@ -8686,8 +8669,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.IgnisArmor
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/IgnisArmor.png
-    Sprite: {fileID: -4550084578846169200, guid: 1ecc0e24c27ada944b46a3192b57df64,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 1ecc0e24c27ada944b46a3192b57df64, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 1ecc0e24c27ada944b46a3192b57df64, type: 3}
     - {fileID: 624974917677838921, guid: 1ecc0e24c27ada944b46a3192b57df64, type: 3}
@@ -8971,8 +8953,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.KronosArmoredOutfit
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/KronosArmoredOutfit.png
-    Sprite: {fileID: -4550084578846169200, guid: a022390061d1d734088edadc116ed96a,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: a022390061d1d734088edadc116ed96a, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: a022390061d1d734088edadc116ed96a, type: 3}
     - {fileID: 624974917677838921, guid: a022390061d1d734088edadc116ed96a, type: 3}
@@ -8995,8 +8976,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.LakeDragonArmor
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/LakeDragonArmor.png
-    Sprite: {fileID: -4550084578846169200, guid: 88cef6ae65ff39a41ac16df3e61359d1,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 88cef6ae65ff39a41ac16df3e61359d1, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 88cef6ae65ff39a41ac16df3e61359d1, type: 3}
     - {fileID: 624974917677838921, guid: 88cef6ae65ff39a41ac16df3e61359d1, type: 3}
@@ -9019,8 +8999,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.LambentGarb
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/LambentGarb.png
-    Sprite: {fileID: -4550084578846169200, guid: 056a2bf7d981c8248b6989fccac8ad05,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 056a2bf7d981c8248b6989fccac8ad05, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 056a2bf7d981c8248b6989fccac8ad05, type: 3}
     - {fileID: 624974917677838921, guid: 056a2bf7d981c8248b6989fccac8ad05, type: 3}
@@ -9158,8 +9137,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.LotusPrinceGarb
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/LotusPrinceGarb.png
-    Sprite: {fileID: -4550084578846169200, guid: 0cb109d5e1ef63040a0200b2cb63dc3a,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 0cb109d5e1ef63040a0200b2cb63dc3a, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 0cb109d5e1ef63040a0200b2cb63dc3a, type: 3}
     - {fileID: 624974917677838921, guid: 0cb109d5e1ef63040a0200b2cb63dc3a, type: 3}
@@ -9182,8 +9160,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.MagnetismArmor
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/MagnetismArmor.png
-    Sprite: {fileID: -4550084578846169200, guid: 7054e2c7d3cc819468c6d4136cca72ef,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 7054e2c7d3cc819468c6d4136cca72ef, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 7054e2c7d3cc819468c6d4136cca72ef, type: 3}
     - {fileID: 624974917677838921, guid: 7054e2c7d3cc819468c6d4136cca72ef, type: 3}
@@ -9517,8 +9494,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.NominakaRobe
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/NominakaRobe.png
-    Sprite: {fileID: -4550084578846169200, guid: 3e51d8485e77b1b4db2fdc33835decd1,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 3e51d8485e77b1b4db2fdc33835decd1, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 3e51d8485e77b1b4db2fdc33835decd1, type: 3}
     - {fileID: 624974917677838921, guid: 3e51d8485e77b1b4db2fdc33835decd1, type: 3}
@@ -9727,8 +9703,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.PhoenixRobe
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/PhoenixRobe.png
-    Sprite: {fileID: -4550084578846169200, guid: ee7cb9c4da5171344898f0a94c38597a,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: ee7cb9c4da5171344898f0a94c38597a, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: ee7cb9c4da5171344898f0a94c38597a, type: 3}
     - {fileID: 624974917677838921, guid: ee7cb9c4da5171344898f0a94c38597a, type: 3}
@@ -9751,8 +9726,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.PhoenixRobe2
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/PhoenixRobe2.png
-    Sprite: {fileID: -4550084578846169200, guid: 71efd1e117e7f864a8a020be67902a6d,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 71efd1e117e7f864a8a020be67902a6d, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 71efd1e117e7f864a8a020be67902a6d, type: 3}
     - {fileID: 624974917677838921, guid: 71efd1e117e7f864a8a020be67902a6d, type: 3}
@@ -9775,8 +9749,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.PlatinumUnicornArmor
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/PlatinumUnicornArmor.png
-    Sprite: {fileID: -4550084578846169200, guid: 0fedeecd88807a24ebe103db6001254b,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 0fedeecd88807a24ebe103db6001254b, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 0fedeecd88807a24ebe103db6001254b, type: 3}
     - {fileID: 624974917677838921, guid: 0fedeecd88807a24ebe103db6001254b, type: 3}
@@ -11180,8 +11153,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.TerraArmor
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/TerraArmor.png
-    Sprite: {fileID: -4550084578846169200, guid: cc16d9faab1a1a4428fc309d7823a094,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: cc16d9faab1a1a4428fc309d7823a094, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: cc16d9faab1a1a4428fc309d7823a094, type: 3}
     - {fileID: 624974917677838921, guid: cc16d9faab1a1a4428fc309d7823a094, type: 3}
@@ -11227,8 +11199,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.UlimateMadokaDress
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/UlimateMadokaDress.png
-    Sprite: {fileID: -4550084578846169200, guid: fc64bdffb10d9a14d8dc34a6d5c781ed,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: fc64bdffb10d9a14d8dc34a6d5c781ed, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: fc64bdffb10d9a14d8dc34a6d5c781ed, type: 3}
     - {fileID: 624974917677838921, guid: fc64bdffb10d9a14d8dc34a6d5c781ed, type: 3}
@@ -11251,8 +11222,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.UlimateMadokaDress2
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/UlimateMadokaDress2.png
-    Sprite: {fileID: -4550084578846169200, guid: f6d234ce805001a4a886c8b7775c5adc,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: f6d234ce805001a4a886c8b7775c5adc, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: f6d234ce805001a4a886c8b7775c5adc, type: 3}
     - {fileID: 624974917677838921, guid: f6d234ce805001a4a886c8b7775c5adc, type: 3}
@@ -11298,8 +11268,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.UnderlordGarb
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/UnderlordGarb.png
-    Sprite: {fileID: -4550084578846169200, guid: 9815e99c4eb0abd4f91442dea2c85760,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 9815e99c4eb0abd4f91442dea2c85760, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 9815e99c4eb0abd4f91442dea2c85760, type: 3}
     - {fileID: 624974917677838921, guid: 9815e99c4eb0abd4f91442dea2c85760, type: 3}
@@ -11552,8 +11521,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.UranosMail
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/UranosMail.png
-    Sprite: {fileID: -4550084578846169200, guid: 34ea45143d4f7984b839f7343a92ecac,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 34ea45143d4f7984b839f7343a92ecac, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 34ea45143d4f7984b839f7343a92ecac, type: 3}
     - {fileID: 624974917677838921, guid: 34ea45143d4f7984b839f7343a92ecac, type: 3}
@@ -11739,8 +11707,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.VoidDragonArmor
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/VoidDragonArmor.png
-    Sprite: {fileID: -4550084578846169200, guid: 798e004ac042b9d4b85840e11b6a35ba,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 798e004ac042b9d4b85840e11b6a35ba, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 798e004ac042b9d4b85840e11b6a35ba, type: 3}
     - {fileID: 624974917677838921, guid: 798e004ac042b9d4b85840e11b6a35ba, type: 3}
@@ -11972,8 +11939,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Armor.YearningGirlsOutfit
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Armor/Legendary/YearningGirlsOutfit.png
-    Sprite: {fileID: -4550084578846169200, guid: 061686e9933d53d4e8d6d117379adce2,
-      type: 3}
+    Sprite: {fileID: -4550084578846169200, guid: 061686e9933d53d4e8d6d117379adce2, type: 3}
     Sprites:
     - {fileID: -4550084578846169200, guid: 061686e9933d53d4e8d6d117379adce2, type: 3}
     - {fileID: 624974917677838921, guid: 061686e9933d53d4e8d6d117379adce2, type: 3}
@@ -16778,8 +16744,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.BowOfCompassion
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/BowOfCompassion.png
-    Sprite: {fileID: 7034423813313189624, guid: 7d6953b710323e84a8aecd391347c43a,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: 7d6953b710323e84a8aecd391347c43a, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: 7d6953b710323e84a8aecd391347c43a, type: 3}
     - {fileID: 8180187256336134010, guid: 7d6953b710323e84a8aecd391347c43a, type: 3}
@@ -16793,8 +16758,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.BowOfGrace
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/BowOfGrace.png
-    Sprite: {fileID: 7034423813313189624, guid: 4862c15967c0db941bb0644b927d30a4,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: 4862c15967c0db941bb0644b927d30a4, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: 4862c15967c0db941bb0644b927d30a4, type: 3}
     - {fileID: 8180187256336134010, guid: 4862c15967c0db941bb0644b927d30a4, type: 3}
@@ -16836,8 +16800,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.ElementalBow
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/ElementalBow.png
-    Sprite: {fileID: 7034423813313189624, guid: 677f8f52577763447b26e948ae9702f2,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: 677f8f52577763447b26e948ae9702f2, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: 677f8f52577763447b26e948ae9702f2, type: 3}
     - {fileID: 8180187256336134010, guid: 677f8f52577763447b26e948ae9702f2, type: 3}
@@ -16851,8 +16814,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.ElementalBow2
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/ElementalBow2.png
-    Sprite: {fileID: 7034423813313189624, guid: 3961a4d8047f80143aaccce1d5edf134,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: 3961a4d8047f80143aaccce1d5edf134, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: 3961a4d8047f80143aaccce1d5edf134, type: 3}
     - {fileID: 8180187256336134010, guid: 3961a4d8047f80143aaccce1d5edf134, type: 3}
@@ -16866,8 +16828,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.EsmeraldaArco
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/EsmeraldaArco.png
-    Sprite: {fileID: 7034423813313189624, guid: 0f9791cb7eb9e104884fcbf65d769d26,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: 0f9791cb7eb9e104884fcbf65d769d26, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: 0f9791cb7eb9e104884fcbf65d769d26, type: 3}
     - {fileID: 8180187256336134010, guid: 0f9791cb7eb9e104884fcbf65d769d26, type: 3}
@@ -16979,8 +16940,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.LakeDragonBow
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/LakeDragonBow.png
-    Sprite: {fileID: 7034423813313189624, guid: 5d174d080a8efa44aa85225e989d445d,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: 5d174d080a8efa44aa85225e989d445d, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: 5d174d080a8efa44aa85225e989d445d, type: 3}
     - {fileID: 8180187256336134010, guid: 5d174d080a8efa44aa85225e989d445d, type: 3}
@@ -16994,8 +16954,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.LakeDragonBow2
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/LakeDragonBow2.png
-    Sprite: {fileID: 7034423813313189624, guid: 0e91d1fa9ee808644a2e1d6a218bc3c7,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: 0e91d1fa9ee808644a2e1d6a218bc3c7, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: 0e91d1fa9ee808644a2e1d6a218bc3c7, type: 3}
     - {fileID: 8180187256336134010, guid: 0e91d1fa9ee808644a2e1d6a218bc3c7, type: 3}
@@ -17009,8 +16968,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.LambentBow
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/LambentBow.png
-    Sprite: {fileID: 7034423813313189624, guid: d9c18cc145219904e9d0ea532a5e229a,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: d9c18cc145219904e9d0ea532a5e229a, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: d9c18cc145219904e9d0ea532a5e229a, type: 3}
     - {fileID: 8180187256336134010, guid: d9c18cc145219904e9d0ea532a5e229a, type: 3}
@@ -17024,8 +16982,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.MagnetismBow
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/MagnetismBow.png
-    Sprite: {fileID: 7034423813313189624, guid: 5cba2e50bebe85946b83cd9ff379ffc6,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: 5cba2e50bebe85946b83cd9ff379ffc6, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: 5cba2e50bebe85946b83cd9ff379ffc6, type: 3}
     - {fileID: 8180187256336134010, guid: 5cba2e50bebe85946b83cd9ff379ffc6, type: 3}
@@ -17053,8 +17010,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.MikadoBow
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/MikadoBow.png
-    Sprite: {fileID: 7034423813313189624, guid: 1f69f7199de5d524fa43ad41028e9ad1,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: 1f69f7199de5d524fa43ad41028e9ad1, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: 1f69f7199de5d524fa43ad41028e9ad1, type: 3}
     - {fileID: 8180187256336134010, guid: 1f69f7199de5d524fa43ad41028e9ad1, type: 3}
@@ -17096,8 +17052,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.PhoenixBow
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/PhoenixBow.png
-    Sprite: {fileID: 7034423813313189624, guid: 7cff4725287453440adb111f784b9646,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: 7cff4725287453440adb111f784b9646, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: 7cff4725287453440adb111f784b9646, type: 3}
     - {fileID: 8180187256336134010, guid: 7cff4725287453440adb111f784b9646, type: 3}
@@ -17293,8 +17248,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.SteampunkBow
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/SteampunkBow.png
-    Sprite: {fileID: 7034423813313189624, guid: c3eefef3e8bf7c24eab686be4fbfdf9f,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: c3eefef3e8bf7c24eab686be4fbfdf9f, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: c3eefef3e8bf7c24eab686be4fbfdf9f, type: 3}
     - {fileID: 8180187256336134010, guid: c3eefef3e8bf7c24eab686be4fbfdf9f, type: 3}
@@ -17350,8 +17304,7 @@ MonoBehaviour:
     Edition: Extensions
     Id: Extensions.Legendary.Bow.VeracityColdbow
     Path: Assets/HeroEditor/Extensions/EpicHeroes/Sprites/Equipment/Bow/Legendary/VeracityColdbow.png
-    Sprite: {fileID: 7034423813313189624, guid: 2c7bfca548724a048acb28fb2760cfe6,
-      type: 3}
+    Sprite: {fileID: 7034423813313189624, guid: 2c7bfca548724a048acb28fb2760cfe6, type: 3}
     Sprites:
     - {fileID: 7034423813313189624, guid: 2c7bfca548724a048acb28fb2760cfe6, type: 3}
     - {fileID: 8180187256336134010, guid: 2c7bfca548724a048acb28fb2760cfe6, type: 3}
@@ -17478,8 +17431,7 @@ MonoBehaviour:
     Edition: FantasyHeroes
     Id: FantasyHeroes.Basic.Firearms1H.FlintPistolTypeA
     Path: Assets/HeroEditor/FantasyHeroes/Sprites/Equipment/Firearms1H/Basic/FlintPistolTypeA.png
-    Sprite: {fileID: 2362096653066871018, guid: 4d21c31a85d998048a24a3e930f7a265,
-      type: 3}
+    Sprite: {fileID: 2362096653066871018, guid: 4d21c31a85d998048a24a3e930f7a265, type: 3}
     Sprites:
     - {fileID: 2362096653066871018, guid: 4d21c31a85d998048a24a3e930f7a265, type: 3}
     - {fileID: -768287472138149725, guid: 4d21c31a85d998048a24a3e930f7a265, type: 3}
@@ -17498,8 +17450,7 @@ MonoBehaviour:
     Edition: FantasyHeroes
     Id: FantasyHeroes.Basic.Firearms1H.FlintPistolTypeB
     Path: Assets/HeroEditor/FantasyHeroes/Sprites/Equipment/Firearms1H/Basic/FlintPistolTypeB.png
-    Sprite: {fileID: 2362096653066871018, guid: 2dc9b29c79ebfbb48b3552049fccbcbc,
-      type: 3}
+    Sprite: {fileID: 2362096653066871018, guid: 2dc9b29c79ebfbb48b3552049fccbcbc, type: 3}
     Sprites:
     - {fileID: 2362096653066871018, guid: 2dc9b29c79ebfbb48b3552049fccbcbc, type: 3}
     - {fileID: -768287472138149725, guid: 2dc9b29c79ebfbb48b3552049fccbcbc, type: 3}
@@ -17518,8 +17469,7 @@ MonoBehaviour:
     Edition: FantasyHeroes
     Id: FantasyHeroes.Basic.Firearms1H.FlintPistolTypeC
     Path: Assets/HeroEditor/FantasyHeroes/Sprites/Equipment/Firearms1H/Basic/FlintPistolTypeC.png
-    Sprite: {fileID: 2362096653066871018, guid: 5a60b0e21ea3b4c41a6889eb2499e86e,
-      type: 3}
+    Sprite: {fileID: 2362096653066871018, guid: 5a60b0e21ea3b4c41a6889eb2499e86e, type: 3}
     Sprites:
     - {fileID: 2362096653066871018, guid: 5a60b0e21ea3b4c41a6889eb2499e86e, type: 3}
     - {fileID: -768287472138149725, guid: 5a60b0e21ea3b4c41a6889eb2499e86e, type: 3}
@@ -17538,8 +17488,7 @@ MonoBehaviour:
     Edition: FantasyHeroes
     Id: FantasyHeroes.Basic.Firearms1H.RevolverTypeA
     Path: Assets/HeroEditor/FantasyHeroes/Sprites/Equipment/Firearms1H/Basic/RevolverTypeA.png
-    Sprite: {fileID: 2362096653066871018, guid: 5d70d2220796f224eaa00497878751d2,
-      type: 3}
+    Sprite: {fileID: 2362096653066871018, guid: 5d70d2220796f224eaa00497878751d2, type: 3}
     Sprites:
     - {fileID: 2362096653066871018, guid: 5d70d2220796f224eaa00497878751d2, type: 3}
     - {fileID: -768287472138149725, guid: 5d70d2220796f224eaa00497878751d2, type: 3}
@@ -17558,8 +17507,7 @@ MonoBehaviour:
     Edition: FantasyHeroes
     Id: FantasyHeroes.Basic.Firearms1H.RevolverTypeB
     Path: Assets/HeroEditor/FantasyHeroes/Sprites/Equipment/Firearms1H/Basic/RevolverTypeB.png
-    Sprite: {fileID: 2362096653066871018, guid: 54a20c2f94626b34493d30bf62a9da4e,
-      type: 3}
+    Sprite: {fileID: 2362096653066871018, guid: 54a20c2f94626b34493d30bf62a9da4e, type: 3}
     Sprites:
     - {fileID: 2362096653066871018, guid: 54a20c2f94626b34493d30bf62a9da4e, type: 3}
     - {fileID: -768287472138149725, guid: 54a20c2f94626b34493d30bf62a9da4e, type: 3}
@@ -17578,8 +17526,7 @@ MonoBehaviour:
     Edition: FantasyHeroes
     Id: FantasyHeroes.Basic.Firearms1H.RevolverTypeC
     Path: Assets/HeroEditor/FantasyHeroes/Sprites/Equipment/Firearms1H/Basic/RevolverTypeC.png
-    Sprite: {fileID: 2362096653066871018, guid: 38ac235120660e94ba9648f943bde542,
-      type: 3}
+    Sprite: {fileID: 2362096653066871018, guid: 38ac235120660e94ba9648f943bde542, type: 3}
     Sprites:
     - {fileID: 2362096653066871018, guid: 38ac235120660e94ba9648f943bde542, type: 3}
     - {fileID: -768287472138149725, guid: 38ac235120660e94ba9648f943bde542, type: 3}
@@ -18837,7 +18784,7 @@ MonoBehaviour:
     Hash: 51f05fe29182ae0b8cbc41448fb6b5d8
     Meta: 
     Tags: []
-  - Name: WarriorShield
+  - Name: ShieldrShield
     Collection: Knights
     Edition: FantasyHeroes
     Id: FantasyHeroes.Knights.Shield.WarriorShield

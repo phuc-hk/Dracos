@@ -31,11 +31,23 @@ public class Attacking : MonoBehaviour
     //    playerInput.actions["Fire"].performed += OnAttack;
     //}
 
+    void Start()
+    {
+        //Character.UnEquip(EquipmentPart.Shield);
+        //Character.UnEquip(EquipmentPart.MeleeWeapon1H);
+        //Character.Equip(Character.SpriteCollection.Shield[1], EquipmentPart.Shield);
+    }
+
     public void OnAttack(InputAction.CallbackContext value)
     {
         if (value.started)
         {
             Attack();
+        }
+
+        if (value.canceled && (Character.WeaponType == WeaponType.Bow))
+        {
+            BowExample.ChargeButtonUp = true;
         }
     }
 
@@ -116,7 +128,7 @@ public class Attacking : MonoBehaviour
 
         if (Character.IsReady())
         {
-            RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition), -40, 40);
+            RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition), 0, 40);
         }
     }
 
