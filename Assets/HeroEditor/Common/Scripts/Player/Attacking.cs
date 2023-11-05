@@ -128,7 +128,16 @@ public class Attacking : MonoBehaviour
 
         if (Character.IsReady())
         {
-            RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition), 0, 40);
+            //RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition), 0, 40);
+
+            if (Input.touchCount > 0)
+            {
+                var touch = Input.GetTouch(0);
+                //if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
+                //{
+                    RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : touch.position, 0, 40);
+                //}
+            }
         }
     }
 
@@ -138,16 +147,15 @@ public class Attacking : MonoBehaviour
     /// <summary>
     /// Selected arm to position (world space) rotation, with limits.
     /// </summary>
-    public void RotateArm(Transform arm, Transform weapon, Vector2 target, float angleMin, float angleMax) // TODO: Very hard to understand logic.
+    
+
+    public void RotateArm(Transform arm, Transform weapon, Vector2 touchPosition, float angleMin, float angleMax)
     {
-        target = arm.transform.InverseTransformPoint(target);
+        var target = arm.transform.InverseTransformPoint(touchPosition);
 
         var angleToTarget = Vector2.SignedAngle(Vector2.right, target);
         var angleToArm = Vector2.SignedAngle(weapon.right, arm.transform.right) * Math.Sign(weapon.lossyScale.x);
         var fix = weapon.InverseTransformPoint(arm.transform.position).y / target.magnitude;
-
-        AngleToTarget = angleToTarget;
-        AngleToArm = angleToArm;
 
         if (fix < -1) fix = -1;
         else if (fix > 1) fix = 1;
@@ -156,6 +164,11 @@ public class Attacking : MonoBehaviour
         var angle = angleToTarget + angleFix + arm.transform.localEulerAngles.z;
 
         angle = NormalizeAngle(angle);
+        
+        if (angle > 90)
+        {
+            angle = 180 - angle;
+        }
 
         if (angle > angleMax)
         {
@@ -182,3 +195,54 @@ public class Attacking : MonoBehaviour
         return angle;
     }
 }
+
+//RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position), 20, 45);
+//if (Input.touchCount > 0)
+//{
+//    RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position), -90, 90);
+//}
+//if (Input.touchCount > 0)
+//{
+//    var touch = Input.GetTouch(0);
+//    if (touch.phase == UnityEngine.TouchPhase.Began || touch.phase == UnityEngine.TouchPhase.Moved)
+//    {
+//        RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(touch.position), 0, 30);
+//    }
+//}
+
+
+//public void RotateArm(Transform arm, Transform weapon, Vector2 target, float angleMin, float angleMax) // TODO: Very hard to understand logic.
+//{
+//    target = arm.transform.InverseTransformPoint(target);
+
+//    var angleToTarget = Vector2.SignedAngle(Vector2.right, target);
+//    var angleToArm = Vector2.SignedAngle(weapon.right, arm.transform.right) * Math.Sign(weapon.lossyScale.x);
+//    var fix = weapon.InverseTransformPoint(arm.transform.position).y / target.magnitude;
+
+//    AngleToTarget = angleToTarget;
+//    AngleToArm = angleToArm;
+
+//    if (fix < -1) fix = -1;
+//    else if (fix > 1) fix = 1;
+
+//    var angleFix = Mathf.Asin(fix) * Mathf.Rad2Deg;
+//    var angle = angleToTarget + angleFix + arm.transform.localEulerAngles.z;
+
+//    angle = NormalizeAngle(angle);
+
+//    if (angle > angleMax)
+//    {
+//        angle = angleMax;
+//    }
+//    else if (angle < angleMin)
+//    {
+//        angle = angleMin;
+//    }
+
+//    if (float.IsNaN(angle))
+//    {
+//        Debug.LogWarning(angle);
+//    }
+
+//    arm.transform.localEulerAngles = new Vector3(0, 0, angle + angleToArm);
+//}
