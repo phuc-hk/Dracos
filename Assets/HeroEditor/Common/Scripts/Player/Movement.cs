@@ -27,6 +27,7 @@ public class Movement : MonoBehaviour
 
     [Header("Wall slide parameter")]
     [SerializeField] GameObject wallCheck;
+    [SerializeField] GameObject groundCheck;
     public LayerMask wallMask;
     public float wallDistance = 0.2f;
     private float slidingSpeed = 25f;
@@ -48,7 +49,7 @@ public class Movement : MonoBehaviour
     {
         if (value.started)
         {
-            if (_jumpCount < 2)
+            if (_jumpCount < 1)
             {
                 if (IsGrounded() && IsWall())       //Stand near wall
                 {
@@ -63,6 +64,7 @@ public class Movement : MonoBehaviour
                 {
                     _speed.y = wallClimpSpeed * 2;
                     _speed.x = _direction.x * wallJumpForce;
+                    _jumpCount++;
                 }                         
                 else                                 //On ground
                 {
@@ -165,7 +167,7 @@ public class Movement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics.CheckSphere(Controller.transform.position, groundDistance, groundMask);
+        return Physics.CheckSphere(groundCheck.transform.position, groundDistance, groundMask);
     }
 
     private bool IsWall()

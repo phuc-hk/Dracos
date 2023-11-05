@@ -609,6 +609,7 @@ MonoBehaviour:
   dashCoolDown: 1
   dashEffect: {fileID: 769848847820716102}
   wallCheck: {fileID: 1505320687}
+  groundCheck: {fileID: 0}
   wallMask:
     serializedVersion: 2
     m_Bits: 128
