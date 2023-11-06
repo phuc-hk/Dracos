@@ -32,10 +32,12 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 		    set => GetComponent<CharacterBodySculptor>().OnCharacterLoaded(value);
         }
 
-	    /// <summary>
-		/// Called automatically when something was changed.
-		/// </summary>
-		public void OnValidate()
+        public Transform lastCheckpoint;
+
+        /// <summary>
+        /// Called automatically when something was changed.
+        /// </summary>
+        public void OnValidate()
         {
             if (Head == null) return;
 

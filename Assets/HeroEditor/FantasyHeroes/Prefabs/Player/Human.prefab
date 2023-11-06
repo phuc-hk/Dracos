@@ -573,6 +573,7 @@ MonoBehaviour:
   Firearm: {fileID: 8293370063637748550}
   LayerManager: {fileID: 114576219538283162}
   ShowHelmet: 1
+  lastCheckpoint: {fileID: 0}
 --- !u!114 &114576219538283162
 MonoBehaviour:
   m_ObjectHideFlags: 0

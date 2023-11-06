@@ -1,15 +1,16 @@
+using Assets.HeroEditor.Common.CharacterScripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DeadSensor : MonoBehaviour
 {
-    public Transform playerOriginalTransform;
-    private Vector3 originalTranform;
+    //public Transform playerOriginalTransform;
+    //private Vector3 originalTranform;
 
     void Start()
     {
-        originalTranform = playerOriginalTransform.position;
+        //originalTranform = playerOriginalTransform.position;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -18,10 +19,17 @@ public class DeadSensor : MonoBehaviour
         {
             Debug.Log("Game over");
             other.GetComponent<Movement>().enabled = false;
-            other.gameObject.transform.position = originalTranform;
+            other.GetComponent<PlayerHealth>().TakeDamage(3);
+            StartCoroutine(MoveToCheckPoint(other.gameObject));
             StartCoroutine(FlashPlayer(other.gameObject));
             StartCoroutine(EnableMovement(other.gameObject.GetComponent<Movement>()));
         }
+    }
+
+    private IEnumerator MoveToCheckPoint(GameObject player)
+    {       
+        yield return new WaitForSeconds(0.5f);
+        player.transform.position = player.GetComponent<Character>().lastCheckpoint.position;
     }
 
     private IEnumerator FlashPlayer(GameObject player)
