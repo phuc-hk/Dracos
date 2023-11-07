@@ -5,31 +5,26 @@ using UnityEngine;
 
 public class DeadSensor : MonoBehaviour
 {
-    //public Transform playerOriginalTransform;
-    //private Vector3 originalTranform;
-
-    void Start()
-    {
-        //originalTranform = playerOriginalTransform.position;
-    }
-
+    [SerializeField] float damage;
+    private bool isDie;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Game over");
-            other.GetComponent<Movement>().enabled = false;
-            other.GetComponent<PlayerHealth>().TakeDamage(3);
-            StartCoroutine(MoveToCheckPoint(other.gameObject));
-            StartCoroutine(FlashPlayer(other.gameObject));
             StartCoroutine(EnableMovement(other.gameObject.GetComponent<Movement>()));
+            StartCoroutine(ChangeExpression(other.gameObject.GetComponent<Character>()));
+            other.GetComponent<PlayerHealth>().TakeDamage(damage);
+            isDie = other.GetComponent<PlayerHealth>().IsDie();
+            StartCoroutine(FlashPlayer(other.gameObject));
+            StartCoroutine(MoveToCheckPoint(other.gameObject));
         }
     }
 
     private IEnumerator MoveToCheckPoint(GameObject player)
     {       
-        yield return new WaitForSeconds(0.5f);
-        player.transform.position = player.GetComponent<Character>().lastCheckpoint.position;
+        yield return new WaitForSeconds(1f);
+        if (!isDie)
+            player.transform.position = player.GetComponent<Character>().lastCheckpoint.position;
     }
 
     private IEnumerator FlashPlayer(GameObject player)
@@ -50,9 +45,19 @@ public class DeadSensor : MonoBehaviour
         }
     }
 
+    private IEnumerator ChangeExpression(Character character)
+    {
+        character.SetExpression("Dead");
+        yield return new WaitForSeconds(1.2f);
+        if (!isDie)
+            character.SetExpression("Default");
+    }
+
     private IEnumerator EnableMovement(Movement movement)
     {
-        yield return new WaitForSeconds(0.5f);
-        movement.enabled = true;
+        movement.enabled = false;
+        yield return new WaitForSeconds(1.2f);
+        if (!isDie)
+            movement.enabled = true;
     }
 }
