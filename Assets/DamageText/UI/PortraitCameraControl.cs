@@ -8,6 +8,7 @@ public class PortraitCameraControl : MonoBehaviour
     public Vector3 offset;
     void LateUpdate()
     {
-        transform.position = playerHead.position + offset;
+        if (playerHead != null)
+            transform.position = playerHead.position + offset;
     }
 }
