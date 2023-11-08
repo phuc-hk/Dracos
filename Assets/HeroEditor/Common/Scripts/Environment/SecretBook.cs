@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,11 +25,20 @@ public class SecretBook : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Unlock new skill");
+            UnityEngine.Debug.Log("Unlock new skill");
             skillButton.gameObject.SetActive(true);
             StartCoroutine(PlayFireWork());
             StartCoroutine(DisplayPanel());
             StartCoroutine(FlashButton()); // Start the flash animation
+        }
+    }
+
+    // Bug fix 08/Nov/23
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
         }
     }
 
