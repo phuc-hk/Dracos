@@ -15,22 +15,14 @@ public class WeaponPickup : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Pickup(other.GetComponent<Character>());
-            //Destroy(gameObject);
+            Destroy(gameObject);
             //StartCoroutine(HideForSeconds(5));
         }
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
-
     private void Pickup(Character character)
     {
-        //fighter.UnequipWeapon();
-        //fighter.EquipWeapon(weapon);
-        //character.Equip()
         character.Equip(item, part);
     }
 

@@ -6,10 +6,28 @@ using UnityEngine;
 public class PlayerHealth : Health
 {
     public Character character;
+    [SerializeField] ParticleSystem healthRecoverFX;
     protected override void Die()
     {
         isDie = true;
         character.SetState(CharacterState.DeathB);
         StartCoroutine(FlashSprite());
+    }
+
+    public void Recover(int recoverAmount)
+    {
+        healthRecoverFX.Play();
+        StartCoroutine(RecoverHealth(recoverAmount));
+    }
+
+    protected IEnumerator RecoverHealth(int recoverAmount)
+    {
+        float recoverPerSecond = recoverAmount / 3;
+        for (int i = 0; i < 3; i++)
+        {
+            health += recoverPerSecond;
+            OnHealthChange?.Invoke();
+            yield return new WaitForSeconds(1);
+        }
     }
 }

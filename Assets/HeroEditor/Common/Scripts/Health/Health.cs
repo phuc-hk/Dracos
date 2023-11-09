@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public abstract class Health : MonoBehaviour
 {
     [SerializeField] float initialHealth;
-    [SerializeField] float health;
+    [SerializeField] public float health;
     protected bool isDie = false;
     protected SpriteRenderer[] spriteRenderers;
     public UnityEvent OnHealthChange;

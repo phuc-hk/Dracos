@@ -1028,6 +1028,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   character: {fileID: 279438581683405462}
+  healthRecoverFX: {fileID: 0}
 --- !u!4 &177892676715895788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4394355602126684, guid: ff726cbf10a6436a8c11071a7641036f, type: 3}

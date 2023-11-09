@@ -11,7 +11,7 @@ public class Coin : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("ting ting");
+            //Debug.Log("ting ting");
             ScoreModel.instance.IncrementScore(coinValue);
             Destroy(gameObject);
         }

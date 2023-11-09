@@ -24,7 +24,7 @@ public class SecretBook : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Unlock new skill");
+            //Debug.Log("Unlock new skill");
             skillButton.gameObject.SetActive(true);
             StartCoroutine(PlayFireWork());
             StartCoroutine(DisplayPanel());

@@ -13,8 +13,6 @@ public enum CoinShape
     Heart
 }
 
-//[System.Serializable]
-
 
 public class CoinSpawner : MonoBehaviour
 {

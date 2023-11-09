@@ -17,4 +17,5 @@ public class CoinSpawnInfo : ScriptableObject
     public int column;
     [Tooltip("Space between 2 coins")]
     public float spacing;
+
 }
