@@ -44,7 +44,7 @@ public abstract class Health : MonoBehaviour
     protected IEnumerator FlashSprite()
     {
         yield return new WaitForSeconds(1f);
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
             foreach (SpriteRenderer spriteRenderer in spriteRenderers)
             {

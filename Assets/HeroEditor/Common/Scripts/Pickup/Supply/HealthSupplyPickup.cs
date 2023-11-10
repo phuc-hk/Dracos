@@ -14,11 +14,22 @@ public class HealthSupplyPickup : MonoBehaviour
         {
             //Debug.Log("Recoverrrr");
             RecoverHealth(other.GetComponent<PlayerHealth>());
-            //Destroy(gameObject);
+            Destroy(gameObject);
             //StartCoroutine(HideForSeconds(5));
         }
 
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        //Debug.Log("Recoverrrr");
+    //        RecoverHealth(collision.gameObject.GetComponent<PlayerHealth>());
+    //        //Destroy(gameObject);
+    //        //StartCoroutine(HideForSeconds(5));
+    //    }
+    //}
 
     private void RecoverHealth(PlayerHealth playerHealth)
     {
