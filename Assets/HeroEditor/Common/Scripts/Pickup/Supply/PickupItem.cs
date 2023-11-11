@@ -10,6 +10,5 @@ public class PickupItem : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.AddForce(Vector2.up * force, ForceMode.Impulse);
-
     }
 }

@@ -11,19 +11,21 @@ public class SupplyPickupSpawner : MonoBehaviour
         EnemyHealth.EnemyDestroyed += SpawnPickUpWrapper;
     }
 
-    private void SpawnPickUpWrapper(Vector3 spawnPosition)
+    private void SpawnPickUpWrapper(Vector3 spawnPosition, GameObject supplyItem)
     {
-        StartCoroutine(SpawnPickUpCoroutine(spawnPosition));
+        StartCoroutine(SpawnPickUpCoroutine(spawnPosition, supplyItem));
     }
 
-    private IEnumerator SpawnPickUpCoroutine(Vector3 spawnPosition)
+    private IEnumerator SpawnPickUpCoroutine(Vector3 spawnPosition, GameObject supplyIem)
     {
         yield return new WaitForSeconds(2.2f);
-        SpawnPickUp(spawnPosition);
+        SpawnPickUp(spawnPosition, supplyIem);
     }
 
-    private void SpawnPickUp(Vector3 spawnPosition)
+    private void SpawnPickUp(Vector3 spawnPosition, GameObject supplyItem)
     {
+        if (itemPrefabs == null)
+            itemPrefabs = supplyItem;
         Instantiate(itemPrefabs, spawnPosition + new Vector3(0,2,0), Quaternion.identity);
     }
 }

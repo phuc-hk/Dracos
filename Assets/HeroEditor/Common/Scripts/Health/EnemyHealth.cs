@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
-    public delegate void OnEnemyDestroyed(Vector3 deathPosition);
+    public delegate void OnEnemyDestroyed(Vector3 deathPosition, GameObject supplyItem);
     public static event OnEnemyDestroyed EnemyDestroyed;
-    public string itemName;
+    public GameObject supplyItem;
     protected override void Die()
     {
         isDie = true;       
         GetComponent<Animator>().SetInteger("State", (int)MonsterState.Death);
         StartCoroutine(FlashSprite());
-        EnemyDestroyed(transform.position);
+        EnemyDestroyed(transform.position, supplyItem);
     }
 }
