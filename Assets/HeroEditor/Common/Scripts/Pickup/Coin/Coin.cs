@@ -13,6 +13,9 @@ public class Coin : MonoBehaviour
         {
             //Debug.Log("ting ting");
             ScoreModel.instance.IncrementScore(coinValue);
+            gameObject.GetComponent<AudioSource>().Play();
+            //gameObject.GetComponent<BoxCollider>().enabled = false;
+            //gameObject.GetComponent<SpriteRenderer>().enabled = false;
             StartCoroutine(CoinExplose());
         }
     }
@@ -20,7 +23,7 @@ public class Coin : MonoBehaviour
     IEnumerator CoinExplose()
     {
         exploseFX.Play();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);
     }
 }
