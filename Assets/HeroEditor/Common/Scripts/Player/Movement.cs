@@ -35,9 +35,12 @@ public class Movement : MonoBehaviour
     private float wallClimpSpeed = 4;
     private float wallJumpForce = 10;
 
+    private AudioSource audioSource;
+    public AudioClip defaultFootstepSound;
     private void Start()
     {
         Character.Animator.SetBool("Ready", true);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void OnMove(InputAction.CallbackContext value)
@@ -144,6 +147,9 @@ public class Movement : MonoBehaviour
         }
         if (direction.x != 0) Turn(direction.x); // Allow turning while in air
         Controller.Move(_speed * Time.deltaTime);
+
+        if (!audioSource.isPlaying && direction.x != 0 && IsGrounded())
+           audioSource.PlayOneShot(defaultFootstepSound);
     }
 
     private void Turn(float direction)

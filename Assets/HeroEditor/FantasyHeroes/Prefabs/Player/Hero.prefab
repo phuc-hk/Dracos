@@ -865,6 +865,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   wallDistance: 0.2
+  defaultFootstepSound: {fileID: 0}
 --- !u!114 &941272746
 MonoBehaviour:
   m_ObjectHideFlags: 0
