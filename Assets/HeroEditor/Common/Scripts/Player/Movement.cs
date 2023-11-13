@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioClip defaultFootstepSound;
+    public AudioClip jumpSound;
     private void Start()
     {
         Character.Animator.SetBool("Ready", true);
@@ -75,6 +76,7 @@ public class Movement : MonoBehaviour
                     _jumpCount++;
                 }             
             }
+            
         }
         if (value.canceled)
         {
@@ -133,6 +135,8 @@ public class Movement : MonoBehaviour
             if (direction != Vector2.zero)
             {
                 Character.SetState(CharacterState.Run);
+                if (!audioSource.isPlaying)
+                   audioSource.PlayOneShot(defaultFootstepSound);
             }
             else if (Character.GetState() < CharacterState.DeathB)
             {
@@ -144,12 +148,15 @@ public class Movement : MonoBehaviour
         {
             Character.SetState(CharacterState.Jump);           
             _speed.y -= fallSpeed * Time.deltaTime;
+            if (!audioSource.isPlaying && _speed.y > 0)
+                audioSource.PlayOneShot(jumpSound);
+
         }
         if (direction.x != 0) Turn(direction.x); // Allow turning while in air
         Controller.Move(_speed * Time.deltaTime);
 
-        if (!audioSource.isPlaying && direction.x != 0 && IsGrounded())
-           audioSource.PlayOneShot(defaultFootstepSound);
+        //if (!audioSource.isPlaying && direction.x != 0 && IsGrounded())
+        //   audioSource.PlayOneShot(defaultFootstepSound);
     }
 
     private void Turn(float direction)
