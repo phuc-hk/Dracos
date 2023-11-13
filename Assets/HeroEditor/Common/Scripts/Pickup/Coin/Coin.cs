@@ -5,7 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public int coinValue = 1;
-
+    public ParticleSystem exploseFX;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,7 +13,14 @@ public class Coin : MonoBehaviour
         {
             //Debug.Log("ting ting");
             ScoreModel.instance.IncrementScore(coinValue);
-            Destroy(gameObject);
+            StartCoroutine(CoinExplose());
         }
+    }
+
+    IEnumerator CoinExplose()
+    {
+        exploseFX.Play();
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }

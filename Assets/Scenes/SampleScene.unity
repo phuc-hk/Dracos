@@ -570,11 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 4337220655415587468, guid: 391f86af5b5bf8b449f29bce5e00705f, type: 3}
   spawnInfos:
-  - {fileID: 11400000, guid: 4ba1186e0c2be7042827ed0243457cb9, type: 2}
-  - {fileID: 11400000, guid: 9026ec7d8ce6da946be173e1eb1f26a6, type: 2}
-  - {fileID: 11400000, guid: 79c11a6b56a12c24fb7723b20d7c5c72, type: 2}
-  - {fileID: 11400000, guid: 313948b4c1e95f04bb6a988b5e877497, type: 2}
-  - {fileID: 11400000, guid: 0f3417634d423fd488855a59bf9502b0, type: 2}
+  - {fileID: 11400000, guid: 1d66b3f3a3e98e44d96287512dbd7ecd, type: 2}
 --- !u!1 &73235537
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,7 +2046,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483241364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 150.75926, y: -0.8548577, z: -14.013956}
+  m_LocalPosition: {x: 19.859268, y: -0.8648577, z: -14.013956}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8423,11 +8419,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 178129336160664536, guid: 46483cbea8552be478581b349781c746, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 158.4
+      value: 27.5
       objectReference: {fileID: 0}
     - target: {fileID: 178129336160664536, guid: 46483cbea8552be478581b349781c746, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 178129336160664536, guid: 46483cbea8552be478581b349781c746, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8882,7 +8878,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 150.75926, y: -0.8548577, z: -14.013956}
+  m_LocalPosition: {x: 19.859268, y: -0.8648577, z: -14.013956}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28582,11 +28578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8564729866951199335, guid: 7af341e0295319148a61b560848ffb9a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8564729866951199335, guid: 7af341e0295319148a61b560848ffb9a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8564729866951199335, guid: 7af341e0295319148a61b560848ffb9a, type: 3}
       propertyPath: m_SizeDelta.x
