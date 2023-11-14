@@ -8810,8 +8810,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 900876737}
     - target: {fileID: 941272779, guid: 46483cbea8552be478581b349781c746, type: 3}
+      propertyPath: gameOverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ca8f4cd59625e240b9565ad572dac69, type: 3}
+    - target: {fileID: 941272779, guid: 46483cbea8552be478581b349781c746, type: 3}
       propertyPath: initialHealth
-      value: 30
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 941272779, guid: 46483cbea8552be478581b349781c746, type: 3}
       propertyPath: healthRecoverFX

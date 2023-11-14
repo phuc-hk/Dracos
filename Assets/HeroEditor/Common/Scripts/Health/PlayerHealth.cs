@@ -7,8 +7,10 @@ public class PlayerHealth : Health
 {
     public Character character;
     [SerializeField] ParticleSystem healthRecoverFX;
+    public AudioClip gameOverSound;
     protected override void Die()
     {
+        GetComponent<AudioSource>().PlayOneShot(gameOverSound);
         isDie = true;
         character.SetState(CharacterState.DeathB);
         StartCoroutine(FlashSprite());
