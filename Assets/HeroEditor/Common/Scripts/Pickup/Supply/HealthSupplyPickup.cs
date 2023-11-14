@@ -7,17 +7,29 @@ using UnityEngine;
 public class HealthSupplyPickup : MonoBehaviour
 {
     [SerializeField] int recoverAmount;
+    public AudioSource audioSource;
+    public AudioClip healSound;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(healSound);
+            }
             //Debug.Log("Recoverrrr");
             RecoverHealth(other.GetComponent<PlayerHealth>());
-            Destroy(gameObject);
+            StartCoroutine(DestroyGameObject());
             //StartCoroutine(HideForSeconds(5));
         }
 
+    }
+
+    IEnumerator DestroyGameObject()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
     //private void OnCollisionEnter(Collision collision)
