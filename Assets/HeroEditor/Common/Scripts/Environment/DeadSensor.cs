@@ -7,10 +7,14 @@ public class DeadSensor : MonoBehaviour
 {
     [SerializeField] float damage;
     private bool isDie;
+    public AudioSource audioSource;
+    public AudioClip hurtSound;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(hurtSound);
             StartCoroutine(EnableMovement(other.gameObject.GetComponent<Movement>()));
             StartCoroutine(ChangeExpression(other.gameObject.GetComponent<Character>()));
             other.GetComponent<PlayerHealth>().TakeDamage(damage);
