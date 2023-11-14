@@ -995,6 +995,8 @@ MonoBehaviour:
   ArmL: {fileID: 178120099921587618}
   ArmR: {fileID: 172826117489950194}
   FixedArm: 1
+  audioSource: {fileID: 0}
+  attackSound: {fileID: 0}
   AngleToTarget: 0
   AngleToArm: 0
 --- !u!114 &941272779

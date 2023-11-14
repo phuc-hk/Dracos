@@ -20,7 +20,8 @@ public class Attacking : MonoBehaviour
     //public KeyCode ReloadButton;
     [Header("Check to disable arm auto rotation.")]
     public bool FixedArm;
-
+    public AudioSource audioSource;
+    public AudioClip attackSound;
     //private void Awake()
     //{
     //    playerInput = GetComponent<PlayerInput>();
@@ -94,6 +95,11 @@ public class Attacking : MonoBehaviour
         }
 
         Character.GetReady();
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(attackSound);
+        }
     }
 
     /// <summary>
