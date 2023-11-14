@@ -11,6 +11,8 @@ public class SecretBook : MonoBehaviour
     public float flashDuration = 1f; // The duration of the flash animation
     public float flashSpeed = 10f; // The speed of the flash animation
     public GameObject panel;
+    public AudioSource audioSource;
+    public AudioClip rewardSound;
 
     private Color originalColor; // The original color of the button
 
@@ -24,6 +26,8 @@ public class SecretBook : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (!audioSource.isPlaying)
+                audioSource.PlayOneShot(rewardSound);
             //Debug.Log("Unlock new skill");
             skillButton.gameObject.SetActive(true);
             StartCoroutine(PlayFireWork());
