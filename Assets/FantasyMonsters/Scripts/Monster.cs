@@ -76,13 +76,13 @@ namespace Assets.FantasyMonsters.Scripts
                 enemyMovement.Patrol();
                 SetState(MonsterState.Walk);
             }
-            else if (Vector3.Distance(transform.position, target.transform.position) > enemyAttacking.attackRange)
+            else if (Vector3.Distance(edge.position, target.transform.position) > enemyAttacking.attackRange)
             {
                 detectRange.SetActive(false);
                 enemyMovement.Chase(target.gameObject.transform);
                 SetState(MonsterState.Run);
             }
-            else if (Vector3.Distance(transform.position, target.transform.position) <= enemyAttacking.attackRange)
+            else if (Vector3.Distance(edge.position, target.transform.position) <= enemyAttacking.attackRange)
             {
                 enemyMovement.Stop();
                 //enemyAttacking.Attack();              
