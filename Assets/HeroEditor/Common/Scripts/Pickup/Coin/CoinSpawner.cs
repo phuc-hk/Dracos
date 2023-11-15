@@ -5,29 +5,42 @@ using UnityEngine;
 
 public enum CoinShape
 {
-    Grid,
+    //Grid,
     Circle,
-    Triangle,
-    Rainbow,
+    //Triangle,
+    //Rainbow,
     Rectangle, 
     Heart
+}
+
+[System.Serializable]
+public class SpawnInfo
+{
+    public Transform position;
+    public CoinShape shape;
+    public int count;
+    public float spacing;
+    //public float radius;
+    public int lines;
+    public int row;
+    public int column;
 }
 
 
 public class CoinSpawner : MonoBehaviour
 {
     public GameObject coinPrefab;
-    public List<CoinSpawnInfo> spawnInfos;
+    public List<SpawnInfo> spawnInfos;
 
     private void Start()
     {
-        foreach (CoinSpawnInfo spawnInfo in spawnInfos)
+        foreach (SpawnInfo spawnInfo in spawnInfos)
         {
             switch (spawnInfo.shape)
             {
-                case CoinShape.Grid:
-                    SpawnCoinsInGrid(spawnInfo.position, spawnInfo.count, spawnInfo.spacing);
-                    break;
+                //case CoinShape.Grid:
+                //    SpawnCoinsInGrid(spawnInfo.position, spawnInfo.count, spawnInfo.spacing);
+                //    break;
                 case CoinShape.Circle:
                     SpawnCoinsInCircle(spawnInfo.position, spawnInfo.count, spawnInfo.lines, spawnInfo.spacing);
                     break;
@@ -45,21 +58,21 @@ public class CoinSpawner : MonoBehaviour
 
     }
 
-    private void SpawnCoinsInGrid(Transform position, int count, float spacing)
-    {
-        int rows = Mathf.CeilToInt(Mathf.Sqrt(count));
-        int columns = Mathf.CeilToInt((float)count / rows);
+    //private void SpawnCoinsInGrid(Transform position, int count, float spacing)
+    //{
+    //    int rows = Mathf.CeilToInt(Mathf.Sqrt(count));
+    //    int columns = Mathf.CeilToInt((float)count / rows);
 
-        for (int row = 0; row < rows; row++)
-        {
-            for (int column = 0; column < columns && row * columns + column < count; column++)
-            {
-                Vector3 offset = new Vector3(column * spacing, row * spacing, 0f);
-                Vector3 coinPosition = position.position + offset;
-                Instantiate(coinPrefab, coinPosition, Quaternion.identity, position);
-            }
-        }
-    }
+    //    for (int row = 0; row < rows; row++)
+    //    {
+    //        for (int column = 0; column < columns && row * columns + column < count; column++)
+    //        {
+    //            Vector3 offset = new Vector3(column * spacing, row * spacing, 0f);
+    //            Vector3 coinPosition = position.position + offset;
+    //            Instantiate(coinPrefab, coinPosition, Quaternion.identity, position);
+    //        }
+    //    }
+    //}
 
 
     public void SpawnCoinsInCircle(Transform centerPosition, int coinsPerLine, int lines, float space)
