@@ -66,7 +66,21 @@ public class EnemyMovement : MonoBehaviour
 
         if (direction.x > 0)
         {
-            //transform.localScale = faceRight;
+            Turn(faceRight);
+        }
+        else if (direction.x < 0)
+        {
+            transform.localScale = faceLeft;
+            Turn(faceLeft);
+        }
+    }
+
+    public void LookTo(Transform player)
+    {
+        Vector3 direction = (player.position - transform.position).normalized;
+
+        if (direction.x > 0)
+        {
             Turn(faceRight);
         }
         else if (direction.x < 0)
