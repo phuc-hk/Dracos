@@ -12,6 +12,7 @@ public class PlayerHealth : Health
     {
         GetComponent<AudioSource>().PlayOneShot(gameOverSound);
         isDie = true;
+        character.gameObject.GetComponent<CharacterController>().enabled = false;
         character.SetState(CharacterState.DeathB);
         StartCoroutine(FlashSprite());
     }

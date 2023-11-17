@@ -38,8 +38,10 @@ public class Movement : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip defaultFootstepSound;
     public AudioClip jumpSound;
+    private Health health;
     private void Start()
     {
+        health = GetComponent<Health>();
         Character.Animator.SetBool("Ready", true);
         audioSource = GetComponent<AudioSource>();
     }
@@ -106,6 +108,7 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+        if (health.IsDie()) return;
         WallSlide();
         Move(_direction);
         if (_canDash && !_isDashing) StartCoroutine(Dash());       

@@ -75,6 +75,7 @@ namespace Assets.FantasyMonsters.Scripts
                 enemyMovement.Patrol();
                 SetState(MonsterState.Walk);
             }
+            else if (target.GetComponent<Health>().IsDie()) return;
             else if (Vector3.Distance(edge.position, target.transform.position) <= enemyMovement.detectRange
                   && Vector3.Distance(edge.position, target.transform.position) > enemyAttacking.attackRange)
             {
@@ -87,7 +88,7 @@ namespace Assets.FantasyMonsters.Scripts
             {
                 enemyMovement.LookTo(target.gameObject.transform);
                 enemyMovement.Stop();
-                enemyAttacking.AssignTarget(target);              
+                enemyAttacking.AssignTarget(target);
                 Animator.SetTrigger("Attack");
             }
             if (isFlyBack)

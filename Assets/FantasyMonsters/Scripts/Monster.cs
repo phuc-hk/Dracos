@@ -76,6 +76,7 @@ namespace Assets.FantasyMonsters.Scripts
                 enemyMovement.Patrol();
                 SetState(MonsterState.Walk);
             }
+            else if (target.GetComponent<Health>().IsDie()) return;
             else if (Vector3.Distance(edge.position, target.transform.position) > enemyAttacking.attackRange)
             {
                 detectRange.SetActive(false);

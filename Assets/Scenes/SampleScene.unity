@@ -13002,7 +13002,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 9ca8f4cd59625e240b9565ad572dac69, type: 3}
     - target: {fileID: 941272779, guid: 46483cbea8552be478581b349781c746, type: 3}
       propertyPath: initialHealth
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 941272779, guid: 46483cbea8552be478581b349781c746, type: 3}
       propertyPath: healthRecoverFX
@@ -49925,7 +49925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8564729866951199335, guid: 7af341e0295319148a61b560848ffb9a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 311
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8672729502143514867, guid: 7af341e0295319148a61b560848ffb9a, type: 3}
       propertyPath: m_AnchorMax.y
