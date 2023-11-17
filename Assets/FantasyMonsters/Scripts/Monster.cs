@@ -84,6 +84,7 @@ namespace Assets.FantasyMonsters.Scripts
             }
             else if (Vector3.Distance(edge.position, target.transform.position) <= enemyAttacking.attackRange)
             {
+                enemyMovement.LookTo(target.gameObject.transform);
                 enemyMovement.Stop();
                 //enemyAttacking.Attack();              
                 Animator.SetTrigger("Attack");

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public float bulletSpeed = 2f;
-    public float bulletGravity = 9.81f;
-
+    public float bulletSpeed = 1f;
+    public float bulletGravity = 5f;
+    public GameObject explosionPrefab;
     private Transform _transform;
     private Vector3 _targetPosition;
     private float _firingForce;
@@ -25,7 +25,7 @@ public class EnemyBullet : MonoBehaviour
         Vector3 direction = _targetPosition - _transform.position;
         float distance = direction.magnitude;
         float time = distance / bulletSpeed;
-        float verticalVelocity = (0.5f * bulletGravity * time);
+        float verticalVelocity = (bulletGravity * time);
         float horizontalVelocity = distance / time;
         Vector3 velocity = direction.normalized * horizontalVelocity + Vector3.up * verticalVelocity;
 
@@ -34,11 +34,13 @@ public class EnemyBullet : MonoBehaviour
         rigidbody.velocity = velocity;
 
         // Destroy the bullet after some time.
-        Destroy(gameObject, time);
+        Destroy(gameObject, time + 0.3f);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        explosionPrefab.SetActive(true);
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerHealth health = collision.gameObject.GetComponent<PlayerHealth>();
