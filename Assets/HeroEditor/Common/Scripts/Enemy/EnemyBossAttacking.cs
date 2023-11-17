@@ -43,10 +43,9 @@ public class EnemyBossAttacking : MonoBehaviour
     {
         if (player == null) return;
         float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        float firingForce = distanceToPlayer * 10f;
         GameObject bulletObject = Instantiate(bulletPrefab, firePos.position, Quaternion.identity);
         EnemyBullet bullet = bulletObject.GetComponent<EnemyBullet>();
-        bullet.Fire(player.transform.position, firingForce);
+        bullet.Fire(player.transform.position);
     }
 
     public void AssignTarget(Character targetToAssign)

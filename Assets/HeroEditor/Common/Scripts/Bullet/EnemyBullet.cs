@@ -9,17 +9,17 @@ public class EnemyBullet : MonoBehaviour
     public GameObject explosionPrefab;
     private Transform _transform;
     private Vector3 _targetPosition;
-    private float _firingForce;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         _transform = transform;
+        audioSource = GetComponent<AudioSource>();
     }
 
-    public void Fire(Vector3 targetPosition, float firingForce)
+    public void Fire(Vector3 targetPosition)
     {
         _targetPosition = targetPosition;
-        _firingForce = firingForce;
 
         // Calculate the initial velocity of the bullet.
         Vector3 direction = _targetPosition - _transform.position;
@@ -34,11 +34,12 @@ public class EnemyBullet : MonoBehaviour
         rigidbody.velocity = velocity;
 
         // Destroy the bullet after some time.
-        Destroy(gameObject, time + 0.3f);
+        Destroy(gameObject, time + 0.5f);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        audioSource.Play();
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         explosionPrefab.SetActive(true);
         if (collision.gameObject.CompareTag("Player"))
