@@ -12,6 +12,7 @@ public abstract class Health : MonoBehaviour
     protected SpriteRenderer[] spriteRenderers;
     public UnityEvent OnHealthChange;
     public TakeDamageEvent OnTakeDamage;
+    public UnityEvent OnDie;
 
     [Serializable]
     public class TakeDamageEvent : UnityEvent<float>

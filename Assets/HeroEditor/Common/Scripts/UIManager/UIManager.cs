@@ -1,12 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     public GameObject guestPanel;
     public GameObject losePanel;
     public GameObject winPanel;
+    public Health health;
+
+    private void OnEnable()
+    {
+        health.OnDie.AddListener(ShowLosePanel);
+    }
+
+    private void OnDisable()
+    {
+        health.OnDie.RemoveAllListeners();
+    }
 
     void Start()
     {
@@ -41,5 +53,10 @@ public class UIManager : MonoBehaviour
         guestPanel.SetActive(false);
         losePanel.SetActive(false);
         winPanel.SetActive(false);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

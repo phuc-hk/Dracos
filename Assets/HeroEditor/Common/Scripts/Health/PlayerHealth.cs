@@ -10,6 +10,7 @@ public class PlayerHealth : Health
     public AudioClip gameOverSound;
     protected override void Die()
     {
+        OnDie?.Invoke();
         GetComponent<AudioSource>().PlayOneShot(gameOverSound);
         isDie = true;
         character.gameObject.GetComponent<CharacterController>().enabled = false;

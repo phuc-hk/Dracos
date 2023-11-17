@@ -1031,6 +1031,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
   character: {fileID: 279438581683405462}
   healthRecoverFX: {fileID: 0}
   gameOverSound: {fileID: 0}
