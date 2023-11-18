@@ -32,6 +32,7 @@ public abstract class Health : MonoBehaviour
         if (health == 0)
         {
             Die();
+            OnDie?.Invoke();
         }
         else
         {
@@ -58,7 +59,7 @@ public abstract class Health : MonoBehaviour
             }
             yield return new WaitForSeconds(0.3f);
         }
-        Destroy(gameObject);
+        Destroy(gameObject, 1f);
     }
 
     public bool IsDie()

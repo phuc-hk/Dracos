@@ -14,7 +14,7 @@ namespace Assets.HeroEditor.Common.ExampleScripts
     {
         public AnimationEvents AnimationEvents;
         public Transform Edge;
-        private int damage = 1;
+        private int damage = 3;
         private int hitCount = 0;
         [SerializeField] GameObject slashEffect;
 
@@ -48,7 +48,7 @@ namespace Assets.HeroEditor.Common.ExampleScripts
                         {
                             if (isWeapon())
                                 slashEffect.SetActive(true);
-                            combatTarget.GetComponent<Monster>().IsFlyBack(true);
+                            //combatTarget.GetComponent<Monster>().IsFlyBack(true);
                             hitCount = 0;
                         }
                     }

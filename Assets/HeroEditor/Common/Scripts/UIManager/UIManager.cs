@@ -10,6 +10,19 @@ public class UIManager : MonoBehaviour
     public GameObject winPanel;
     public Health health;
 
+    private static UIManager instance;
+
+    public static UIManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<UIManager>();
+            }
+            return instance;
+        }
+    }
     private void OnEnable()
     {
         health.OnDie.AddListener(ShowLosePanel);
@@ -29,6 +42,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowGuestPanel()
     {
+        Time.timeScale = 0;
         guestPanel.SetActive(true);
         losePanel.SetActive(false);
         winPanel.SetActive(false);
@@ -36,6 +50,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowLosePanel()
     {
+        StartCoroutine(PauseWithDelay(2));
         guestPanel.SetActive(false);
         losePanel.SetActive(true);
         winPanel.SetActive(false);
@@ -43,6 +58,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowWinPanel()
     {
+        StartCoroutine(PauseWithDelay(2));
         guestPanel.SetActive(false);
         losePanel.SetActive(false);
         winPanel.SetActive(true);
@@ -57,6 +73,13 @@ public class UIManager : MonoBehaviour
 
     public void RestartGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    IEnumerator PauseWithDelay(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        Time.timeScale = 0;
     }
 }
