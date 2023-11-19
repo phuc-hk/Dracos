@@ -576,6 +576,7 @@ MonoBehaviour:
   Firearm: {fileID: 8293370062714381484}
   LayerManager: {fileID: 114576218883810672}
   ShowHelmet: 1
+  lastCheckpoint: {fileID: 0}
 --- !u!114 &114576218883810672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27084,6 +27085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationEvents: {fileID: 114289190016055086}
   Edge: {fileID: 4058613315571086106}
+  damage: 3
   slashEffect: {fileID: 0}
 --- !u!1 &4055335648355417868
 GameObject:

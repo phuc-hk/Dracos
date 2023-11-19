@@ -147,6 +147,7 @@ MonoBehaviour:
     Tags:
     - Paint
   part: 7
+  weaponDamage: 3
 --- !u!65 &9065458162520978538
 BoxCollider:
   m_ObjectHideFlags: 0

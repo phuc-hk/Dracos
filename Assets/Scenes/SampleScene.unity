@@ -2656,7 +2656,7 @@ PrefabInstance:
       objectReference: {fileID: 9065458162520978542, guid: 839300102bb318647877b1881d273ede, type: 3}
     - target: {fileID: 1663567272867746226, guid: dda0b0426b61d954785372f304979094, type: 3}
       propertyPath: initialHealth
-      value: 20
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5294193135121437942, guid: dda0b0426b61d954785372f304979094, type: 3}
       propertyPath: m_Color.b
@@ -13147,6 +13147,10 @@ PrefabInstance:
     - target: {fileID: 279438581683405462, guid: 46483cbea8552be478581b349781c746, type: 3}
       propertyPath: Expressions.Array.data[2].EyesColor.r
       value: 0.8591136
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297080989383740870, guid: 46483cbea8552be478581b349781c746, type: 3}
+      propertyPath: damage
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46483cbea8552be478581b349781c746, type: 3}
@@ -50402,7 +50406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8564729866951199335, guid: 7af341e0295319148a61b560848ffb9a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 311
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8672729502143514867, guid: 7af341e0295319148a61b560848ffb9a, type: 3}
       propertyPath: m_AnchorMax.y

@@ -14,7 +14,7 @@ namespace Assets.HeroEditor.Common.ExampleScripts
     {
         public AnimationEvents AnimationEvents;
         public Transform Edge;
-        public int damage = 1;
+        private int damage = 1;
         private int hitCount = 0;
         [SerializeField] GameObject slashEffect;
 
@@ -55,6 +55,11 @@ namespace Assets.HeroEditor.Common.ExampleScripts
                     break;
                 default: return;
             }
+        }
+
+        public void SetWeaponDamage(int damage)
+        {
+            this.damage = damage;
         }
 
         private bool isWeapon()

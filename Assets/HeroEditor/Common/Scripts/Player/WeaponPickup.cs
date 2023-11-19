@@ -17,7 +17,7 @@ public class WeaponPickup : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Pickup(other.GetComponent<Character>());
-            other.GetComponentInChildren<MeleeWeapon>().damage = weaponDamage;
+            other.GetComponentInChildren<MeleeWeapon>().SetWeaponDamage(weaponDamage);
             Destroy(gameObject);
             //StartCoroutine(HideForSeconds(5));
         }
