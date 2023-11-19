@@ -14,7 +14,7 @@ namespace Assets.HeroEditor.Common.ExampleScripts
     {
         public AnimationEvents AnimationEvents;
         public Transform Edge;
-        private int damage = 3;
+        public int damage = 1;
         private int hitCount = 0;
         [SerializeField] GameObject slashEffect;
 

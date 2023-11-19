@@ -1,4 +1,5 @@
 using Assets.HeroEditor.Common.CharacterScripts;
+using Assets.HeroEditor.Common.ExampleScripts;
 using HeroEditor.Common;
 using HeroEditor.Common.Enums;
 using System.Collections;
@@ -9,12 +10,14 @@ public class WeaponPickup : MonoBehaviour
 {
     [SerializeField] SpriteGroupEntry item;
     [SerializeField] EquipmentPart part;
+    [SerializeField] int weaponDamage;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             Pickup(other.GetComponent<Character>());
+            other.GetComponentInChildren<MeleeWeapon>().damage = weaponDamage;
             Destroy(gameObject);
             //StartCoroutine(HideForSeconds(5));
         }

@@ -24,8 +24,8 @@ public class SupplyPickupSpawner : MonoBehaviour
 
     private void SpawnPickUp(Vector3 spawnPosition, GameObject supplyItem)
     {
-        if (itemPrefabs == null)
-            itemPrefabs = supplyItem;
+        //if (itemPrefabs == null)
+        itemPrefabs = supplyItem;
         Instantiate(itemPrefabs, spawnPosition + new Vector3(0,2,0), Quaternion.identity);
     }
 }
