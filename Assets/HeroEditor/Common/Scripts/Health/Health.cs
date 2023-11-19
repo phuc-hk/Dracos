@@ -28,6 +28,7 @@ public abstract class Health : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
+        if (isDie) return;
         health = Mathf.Max(health - damage, 0);
         if (health == 0)
         {

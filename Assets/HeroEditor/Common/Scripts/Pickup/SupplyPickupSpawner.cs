@@ -6,9 +6,14 @@ public class SupplyPickupSpawner : MonoBehaviour
 {
     public GameObject itemPrefabs;
 
-    private void Start()
+    private void OnEnable()
     {
         EnemyHealth.EnemyDestroyed += SpawnPickUpWrapper;
+    }
+
+    private void OnDisable()
+    {
+        EnemyHealth.EnemyDestroyed -= SpawnPickUpWrapper;
     }
 
     private void SpawnPickUpWrapper(Vector3 spawnPosition, GameObject supplyItem)
