@@ -60,7 +60,7 @@ public abstract class Health : MonoBehaviour
             }
             yield return new WaitForSeconds(0.3f);
         }
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 0.5f);
     }
 
     public bool IsDie()

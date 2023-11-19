@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public float bulletSpeed = 1f;
+    public float bulletSpeed = 0.5f;
     public float bulletGravity = 5f;
     public GameObject explosionPrefab;
     private Transform _transform;
