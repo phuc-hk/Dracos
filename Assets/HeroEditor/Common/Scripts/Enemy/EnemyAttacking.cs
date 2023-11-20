@@ -29,7 +29,7 @@ public class EnemyAttacking : MonoBehaviour
         {
             case "Attack":
                 // Place hit behaviour here. For example, you could check/raycast collisons here.
-                Collider[] hitColliders = Physics.OverlapSphere(Edge.position, 1);
+                Collider[] hitColliders = Physics.OverlapSphere(Edge.position, attackRange);
                 foreach (Collider hitCollider in hitColliders)
                 {
                     PlayerHealth health = hitCollider.GetComponent<PlayerHealth>();
