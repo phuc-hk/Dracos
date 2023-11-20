@@ -16,6 +16,7 @@ public class EnemyHealth : Health
         isDie = true;       
         GetComponent<Animator>().SetInteger("State", (int)MonsterState.Death);
         StartCoroutine(FlashSprite());
-        EnemyDestroyed(transform.position, supplyItem);
+        if(supplyItem != null)
+            EnemyDestroyed(transform.position, supplyItem);
     }
 }

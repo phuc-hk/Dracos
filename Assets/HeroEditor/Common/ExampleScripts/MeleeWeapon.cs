@@ -40,7 +40,6 @@ namespace Assets.HeroEditor.Common.ExampleScripts
                     Collider2D[] hitColliders = Physics2D.OverlapBoxAll(Edge.position, Edge.localScale, 0);
                     foreach (Collider2D hitCollider in hitColliders)
                     {
-                        Debug.Log(hitCollider.name);
                         CombatTarget combatTarget = hitCollider.GetComponent<CombatTarget>();
                         if (combatTarget == null) continue;
                         combatTarget.GetComponent<Health>().TakeDamage(damage);
