@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public GameObject guestPanel;
     public GameObject losePanel;
     public GameObject winPanel;
+    public GameObject instructionPanel;
     public Health health;
 
     private static UIManager instance;
@@ -75,6 +76,19 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ShowInstructionPanel()
+    {      
+        StartCoroutine(DelayTurnOffPanel(instructionPanel));
+    }
+
+    IEnumerator DelayTurnOffPanel(GameObject panel)
+    {
+        yield return new WaitForSeconds(2f);
+        instructionPanel.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        panel.SetActive(false);
     }
 
     IEnumerator PauseWithDelay(float delayTime)

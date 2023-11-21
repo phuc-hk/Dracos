@@ -39,12 +39,15 @@ public class Movement : MonoBehaviour
     public AudioClip defaultFootstepSound;
     public AudioClip jumpSound;
     private Health health;
+    
     private void Start()
-    {
+    {     
         health = GetComponent<Health>();
         Character.Animator.SetBool("Ready", true);
         audioSource = GetComponent<AudioSource>();
     }
+
+ 
 
     public void OnMove(InputAction.CallbackContext value)
     {
@@ -107,7 +110,7 @@ public class Movement : MonoBehaviour
     }
 
     private void Update()
-    {
+    {       
         if (health.IsDie()) return;
         WallSlide();
         Move(_direction);
