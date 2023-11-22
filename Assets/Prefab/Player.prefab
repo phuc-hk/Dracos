@@ -27085,7 +27085,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationEvents: {fileID: 114289190016055086}
   Edge: {fileID: 4058613315571086106}
-  damage: 3
   slashEffect: {fileID: 0}
 --- !u!1 &4055335648355417868
 GameObject:
