@@ -38,7 +38,8 @@ public class EndPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            barrie.SetActive(false);
+            if (barrie != null)
+                barrie.SetActive(false);
             //other.GetComponentInChildren<Animator>().SetBool("Victory", true);
             StartCoroutine(PlayMusic());
             StartCoroutine(Firework());
@@ -62,7 +63,9 @@ public class EndPoint : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         player.GetComponentInChildren<Animator>().SetBool("Victory", true);
-        GameObject.Find("Princess").GetComponent<Character>().SetExpression("Happy");
+        GameObject princess = GameObject.Find("Princess");
+        if (princess != null)
+            princess.GetComponent<Character>().SetExpression("Happy");
     }
 
     IEnumerator Win()

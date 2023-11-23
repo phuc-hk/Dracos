@@ -79,7 +79,8 @@ public class UIManager : MonoBehaviour
     }
 
     public void ShowInstructionPanel()
-    {      
+    {
+        if (instructionPanel == null) return;
         StartCoroutine(DelayTurnOffPanel(instructionPanel));
     }
 
@@ -94,6 +95,6 @@ public class UIManager : MonoBehaviour
     IEnumerator PauseWithDelay(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 }
