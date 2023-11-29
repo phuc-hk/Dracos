@@ -7695,6 +7695,8 @@ MonoBehaviour:
   AnimationEvents: {fileID: 114289189664409796}
   Edge: {fileID: 4058613315654864112}
   slashEffect: {fileID: 0}
+  axeWeapon: {fileID: 0}
+  axePos: {fileID: 0}
 --- !u!1 &4055335647433212134
 GameObject:
   m_ObjectHideFlags: 0

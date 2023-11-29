@@ -14,9 +14,11 @@ namespace Assets.HeroEditor.Common.ExampleScripts
     {
         public AnimationEvents AnimationEvents;
         public Transform Edge;
-        private int damage = 1;
+        private int damage = 2;
         private int hitCount = 0;
         [SerializeField] GameObject slashEffect;
+        [SerializeField] GameObject axeWeapon;
+        [SerializeField] Transform axePos;
 
         /// <summary>
         /// Listen animation events to determine hit moments.
@@ -52,6 +54,10 @@ namespace Assets.HeroEditor.Common.ExampleScripts
                             hitCount = 0;
                         }
                     }
+                    break;
+                case "Throw":
+                    //Debug.Log("Throw axe ne");
+                    Instantiate(axeWeapon, axePos.position, Quaternion.identity);
                     break;
                 default: return;
             }

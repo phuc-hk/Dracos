@@ -78,8 +78,13 @@ public class Attacking : MonoBehaviour
         {
             case WeaponType.Melee1H:
             case WeaponType.Melee2H:
+            //case WeaponType.MeleePaired:
+                Character.Slash();
+                break;
             case WeaponType.MeleePaired:
                 Character.Slash();
+                Character.UnEquip(EquipmentPart.MeleeWeaponPaired);
+                StartCoroutine(UnequipWeapon());
                 break;
             case WeaponType.Bow:
                 BowExample.ChargeButtonDown = true;
@@ -100,6 +105,13 @@ public class Attacking : MonoBehaviour
         {
             audioSource.PlayOneShot(attackSound);
         }
+    }
+
+    IEnumerator UnequipWeapon()
+    {
+        yield return new WaitForSeconds(2f);
+        Character.WeaponType = WeaponType.Melee1H;
+        Character.Initialize();
     }
 
     /// <summary>
