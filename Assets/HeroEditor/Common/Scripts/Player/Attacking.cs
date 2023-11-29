@@ -109,7 +109,7 @@ public class Attacking : MonoBehaviour
 
     IEnumerator UnequipWeapon()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Character.WeaponType = WeaponType.Melee1H;
         Character.Initialize();
     }
